@@ -2,7 +2,7 @@
 ## HTML, CSS, JavaScript, JSP를 이용하여 쇼핑몰 제작하기
 
 ### 사용기술
-* 서버: nginx + tomcat 9.0m
+* 서버: nginx + Apache tomcat 9.0m
 * 프론트엔드 : 부트스트랩
 * 백엔드: JSP + JSTL
 * DB: MariaDB 10.1.19
@@ -15,8 +15,10 @@
 >* DB_PASSWORD: "sds902"
 
 ### DB 테이블 정보
-
-PRI: PRIMARY KEY
+table name: member
+id varchar(50) primary key not null
+password varchar(50) not null
+email varchar(100) not null
  
 ##16. 11. 14
 ### 역할 분담
@@ -29,7 +31,7 @@ PRI: PRIMARY KEY
 * 클래스명은 첫글자 대문자로 camelCase를 지켜준다.
 	>* i.e. MemberService
 * 약자는 전부 대문자
-	>* i.e. MemberDAO, MemberVO
+>	* i.e. MemberDAO, MemberVO
 * 메소드 작명 규칙
 	>* make: 생성과 관련된 메소드 접두어
 		>* i.e. makePage(), makeConnection()
