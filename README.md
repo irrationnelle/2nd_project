@@ -29,11 +29,11 @@
  
 ### 코딩 규칙 CODING CONVENTION
 * 클래스명은 첫글자 대문자로 camelCase를 지켜준다.
-	* i.e. MemberService
+	* i.e) MemberService
 * 약자는 전부 대문자
-	* i.e. MemberDAO, MemberVO
+	* i.e) MemberDAO, MemberVO
 * 메소드 작명 규칙
 	* make: 생성과 관련된 메소드 접두어
-		* i.e. makePage(), makeConnection()
+		* i.e) makePage(), makeConnection()
 	* select: DB에서 정보를 읽어올 때 사용하는 접두어
-		* i.e. selectMember(), selectId()
+		* i.e) selectMember(), selectId()
