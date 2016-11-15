@@ -21,7 +21,7 @@
 * email varchar(100) not null
  
 ##16. 11. 14
-### 역할 분담
+### 역할 분담!
 * 강은선: MemberService 클래스
 * 서창원: MemberController 클래스
 * 송지원: MemberDAO 클래스
