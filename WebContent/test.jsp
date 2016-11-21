@@ -6,12 +6,6 @@
 <title>test</title>
 </head>
 <body>
-	git 테스트
-	github 테스트
-	테스트용!
-	조장님 테스트입니다아아아아아아앙!!
-	다시 한 번 테스트
-	또 한 번 테스트
-	마지막 테스트
+	github push test
 </body>
 </html>
