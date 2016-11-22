@@ -26,7 +26,6 @@ public class MemberService {
 		}
 	}
 	
-	
 	public boolean login(String id, String password){
 		MemberVO savedMember = dao.select(id);
 		if(savedMember != null && savedMember.getPassword().equals(password)){
@@ -35,4 +34,6 @@ public class MemberService {
 			return false;
 		}
 	}
+	
+	
 }
