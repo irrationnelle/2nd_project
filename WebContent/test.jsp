@@ -6,8 +6,6 @@
 <title>test</title>
 </head>
 <body>
-	git 테스트
-	github 테스트
-	테스트용!
+	github push test 03
 </body>
 </html>
