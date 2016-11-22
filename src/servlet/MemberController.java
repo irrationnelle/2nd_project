@@ -32,7 +32,7 @@ public class MemberController extends HttpServlet {
 	}
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String action = request.getParameter("action");
 		String viewPath = "";
 
@@ -61,16 +61,25 @@ public class MemberController extends HttpServlet {
 				session.setAttribute("loginId", id);
 			}
 			viewPath = "login_result.jsp";
+			
 		} else if(action.equals("logout")){
 			HttpSession session = request.getSession();
 			session.invalidate();
 			viewPath = "logout.jsp";
+		
+		} else if(action.equals("leaveId")){
+			String id = request.getParameter("id");
+			String password = request.getParameter("password");
+			
+			if (service.leave(id, password) == true) {
+				viewPath = "leave_success.jsp";
+			} else {
+				viewPath = "leave_fail.jsp";
+			}
 		}
-
 		// 자바 서블릿의 작업이 끝났으면 jsp에게 forward하기!
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
 		dispatcher.forward(request, response);
-
 	}
 }
 
