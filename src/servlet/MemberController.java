@@ -51,7 +51,9 @@ public class MemberController extends HttpServlet {
 			} else {
 				viewPath = "join_fail.jsp";
 			}
-
+			
+			
+			
 		} else if (action.equals("login")) {
 			String id = request.getParameter("id");
 			String password = request.getParameter("password");
