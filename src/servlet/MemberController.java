@@ -36,18 +36,21 @@ public class MemberController extends HttpServlet {
 		String action = request.getParameter("action");
 		String viewPath = "";
 
+		System.out.println("test");
 		if (action.equals("joinForm")) {
 			// 회원가입 양식 보여주기
 			viewPath = "join_form.jsp";
 		} else if (action.equals("join")) {
+			System.out.println("test2");
 			// 입력한 내용으로 회원가입 진행
 			MemberVO member = new MemberVO();
 			member.setId(request.getParameter("id"));
 			member.setEmail(request.getParameter("email"));			
 			member.setPassword(request.getParameter("password"));
 
+			System.out.println(member);
 			if (service.join(member) == true) {
-				viewPath = "join_success.jsp";
+				viewPath = "index.jsp";
 			} else {
 				viewPath = "join_fail.jsp";
 			}
@@ -57,17 +60,24 @@ public class MemberController extends HttpServlet {
 		} else if (action.equals("login")) {
 			String id = request.getParameter("id");
 			String password = request.getParameter("password");
-
+			
+			System.out.println(id);
+			System.out.println(password);
+			
 			if (service.login(id, password) == true) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginId", id);
 			}
-			viewPath = "login_result.jsp";
+			
+			System.out.println(id);
+			System.out.println(password);
+			
+			viewPath = "index.jsp";
 			
 		} else if(action.equals("logout")){
 			HttpSession session = request.getSession();
 			session.invalidate();
-			viewPath = "logout.jsp";
+			viewPath = "index.jsp";
 		
 		} else if(action.equals("leaveId")){
 			String id = request.getParameter("id");

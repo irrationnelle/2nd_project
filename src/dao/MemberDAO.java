@@ -20,7 +20,7 @@ public class MemberDAO {
 		
 		try{
 		connection = DBUtil.makeConnection();
-		String sql = "INSERT INTO MEMBER (ID,PASSWORD,EMAIL) VALUES (?,?,?)";
+		String sql = "INSERT INTO member (ID,PASSWORD,EMAIL) VALUES (?,?,?)";
 		pstatement = connection.prepareStatement(sql);
 		pstatement.setString(1, member.getId());
 		pstatement.setString(2, member.getPassword());
@@ -45,7 +45,7 @@ public class MemberDAO {
 		MemberVO result = null;
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "SELECT ID,PASSWORD,EMAIL FROM MEMBER WHERE ID=?";
+			String sql = "SELECT ID,PASSWORD,EMAIL FROM member WHERE ID=?";
 			pstatement = connection.prepareStatement(sql);
 			
 			pstatement.setString(1, id);
@@ -75,7 +75,7 @@ public class MemberDAO {
 		
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "UPDATE MEMBER SET PASSWORD=? EMAIL=? WHERE ID=?";
+			String sql = "UPDATE member SET PASSWORD=? EMAIL=? WHERE ID=?";
 			pstatement = connection.prepareStatement(sql);
 			pstatement.setString(1, member.getPassword());
 			pstatement.setString(2, member.getEmail());
