@@ -8,6 +8,7 @@ public class MemberService {
 	public static MemberService getInstance(){
 		return instance;
 	}
+	
 	public MemberService(){}
 	private MemberDAO dao = MemberDAO.getInstance();
 	
