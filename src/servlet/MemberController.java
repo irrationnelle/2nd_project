@@ -67,7 +67,7 @@ public class MemberController extends HttpServlet {
 			viewPath = "logout.jsp";
 		}
 
-		// 자바 서블릿의 작업이 끝났으면 jsp에게 forward하기
+		// 자바 서블릿의 작업이 끝났으면 jsp에게 forward하기!
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
 		dispatcher.forward(request, response);
 
