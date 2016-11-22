@@ -43,8 +43,7 @@ public class MemberController extends HttpServlet {
 			// 입력한 내용으로 회원가입 진행
 			MemberVO member = new MemberVO();
 			member.setId(request.getParameter("id"));
-			member.setEmail(request.getParameter("email"));
-			
+			member.setEmail(request.getParameter("email"));			
 			member.setPassword(request.getParameter("password"));
 
 			if (service.join(member) == true) {
