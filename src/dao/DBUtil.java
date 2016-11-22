@@ -10,6 +10,7 @@ public class DBUtil {
 	private static String DB_ID = "root";
 	private static String DB_PW = "sds902";
 	
+	
 	//DB와 연결하는 Method
 	public static Connection makeConnection(){
 		Connection connection = null;
