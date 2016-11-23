@@ -15,12 +15,12 @@
 >* DB_PASSWORD: "sds902"
 
 ### DB 테이블 정보
-* table name: member
+#### table name: member
 * id varchar(50) primary key not null
 * password varchar(50) not null
 * email varchar(100) not null
 
-* table name: product
+#### table name: product
 * product_id int primary key not null auto_increment,
 * product_name varchar(100) not null,
 * product_amount int not null,
