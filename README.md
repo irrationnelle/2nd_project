@@ -40,7 +40,7 @@
 
 ##16. 11. 23
 ### 역할 분담!
-* 강은선: 프론트엔드 + JSP
+* 강은선: 프론트엔드 + JSP (템플릿 정보: https://p.w3layouts.com/demos/swim_wear/web/ )
 * 서창원: ProductDAO, OrderInfoDAO 클래스
 * 송지원: 서블릿 작업(아마도 ProductController, OrderInfoController 클래스)
 * 안현석: ProductService, OrderInfoService 클래스
