@@ -1,20 +1,20 @@
-# 2nd project <ì‡¼í•‘ëª° ì œì‘>
-## HTML, CSS, JavaScript, JSPë¥¼ ì´ìš©í•˜ì—¬ ì‡¼í•‘ëª° ì œì‘í•˜ê¸°
+# 2nd project <¼îÇÎ¸ô Á¦ÀÛ>
+## HTML, CSS, JavaScript, JSP¸¦ ÀÌ¿ëÇÏ¿© ¼îÇÎ¸ô Á¦ÀÛÇÏ±â
 
-### ì‚¬ìš©ê¸°ìˆ 
-* ì„œë²„: CentOS (OS) + nginx (Server) + Apache tomcat 9.0m (AWS)
-* í”„ë¡ íŠ¸ì—”ë“œ : ë¶€íŠ¸ìŠ¤íŠ¸ë©
-* ë°±ì—”ë“œ: JSP + JSTL
+### »ç¿ë±â¼ú
+* ¼­¹ö: CentOS (OS) + nginx (Server) + Apache tomcat 9.0m (AWS)
+* ÇÁ·ĞÆ®¿£µå : ºÎÆ®½ºÆ®·¦
+* ¹é¿£µå: JSP + JSTL
 * DB: MariaDB 10.1.19
 
-### ê°œë°œí™˜ê²½
->* ì„œë²„ IP: 70.12.109.114:8080
+### °³¹ßÈ¯°æ
+>* ¼­¹ö IP: 70.12.109.114:8080
 >* DB_DRIVER: "org.mariadb.jdbc.Driver"
 >* DB_URL: "jdbc:mariadb://70.12.109.114:3306/project"
 >* DB_ID: "root"
 >* DB_PASSWORD: "sds902"
 
-### DB í…Œì´ë¸” ì •ë³´
+### DB Å×ÀÌºí Á¤º¸
 #### table name: member
 * id varchar(50) primary key not null
 * password varchar(50) not null
@@ -28,21 +28,30 @@
 * product_detail text not null,
 * product_image text not null,
 * product_brand varchar(100) not null);
+
+#### table name: order_info
+* order_id int primary key not null auto_increment,
+* order_date datetime not null,
+* order_price int not null,
+* order_totalprice int not null,
+* order_amount int not null,
+* product_id int not null,
+* foreign key(product_id) references product(product_id)
  
 ##16. 11. 14
-### ì—­í•  ë¶„ë‹´!
-* ê°•ì€ì„ : MemberService í´ë˜ìŠ¤
-* ì„œì°½ì›: MemberController í´ë˜ìŠ¤
-* ì†¡ì§€ì›: MemberDAO í´ë˜ìŠ¤
-* ì•ˆí˜„ì„: í”„ë¡ íŠ¸ì—”ë“œ + JSP
+### ¿ªÇÒ ºĞ´ã!
+* °­Àº¼±: MemberService Å¬·¡½º
+* ¼­Ã¢¿ø: MemberController Å¬·¡½º
+* ¼ÛÁö¿ø: MemberDAO Å¬·¡½º
+* ¾ÈÇö¼®: ÇÁ·ĞÆ®¿£µå + JSP
  
-### ì½”ë”© ê·œì¹™ CODING CONVENTION
-* í´ë˜ìŠ¤ëª…ì€ ì²«ê¸€ì ëŒ€ë¬¸ìë¡œ camelCaseë¥¼ ì§€ì¼œì¤€ë‹¤.
+### ÄÚµù ±ÔÄ¢ CODING CONVENTION
+* Å¬·¡½º¸íÀº Ã¹±ÛÀÚ ´ë¹®ÀÚ·Î camelCase¸¦ ÁöÄÑÁØ´Ù.
 	* i.e) MemberService
-* ì•½ìëŠ” ì „ë¶€ ëŒ€ë¬¸ì
+* ¾àÀÚ´Â ÀüºÎ ´ë¹®ÀÚ
 	* i.e) MemberDAO, MemberVO
-* ë©”ì†Œë“œ ì‘ëª… ê·œì¹™
-	* make: ìƒì„±ê³¼ ê´€ë ¨ëœ ë©”ì†Œë“œ ì ‘ë‘ì–´
+* ¸Ş¼Òµå ÀÛ¸í ±ÔÄ¢
+	* make: »ı¼º°ú °ü·ÃµÈ ¸Ş¼Òµå Á¢µÎ¾î
 		* i.e) makePage(), makeConnection()
-	* select: DBì—ì„œ ì •ë³´ë¥¼ ì½ì–´ì˜¬ ë•Œ ì‚¬ìš©í•˜ëŠ” ì ‘ë‘ì–´
+	* select: DB¿¡¼­ Á¤º¸¸¦ ÀĞ¾î¿Ã ¶§ »ç¿ëÇÏ´Â Á¢µÎ¾î
 		* i.e) selectMember(), selectId()
