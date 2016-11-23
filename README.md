@@ -37,6 +37,13 @@
 * order_amount int not null,
 * product_id int not null,
 * foreign key(product_id) references product(product_id)
+
+##16. 11. 23
+### 역할 분담!
+* 강은선: 프론트엔드 + JSP
+* 서창원: ProductDAO, OrderInfoDAO 클래스
+* 송지원: 서블릿 작업(아마도 ProductController, OrderInfoController 클래스)
+* 안현석: ProductService, OrderInfoService 클래스
  
 ##16. 11. 14
 ### 역할 분담!
