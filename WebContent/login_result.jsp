@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@page session="true" %>
+	pageEncoding="EUC-KR"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
 <head>

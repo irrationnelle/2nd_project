@@ -8,10 +8,10 @@ public class MemberService {
 	public static MemberService getInstance(){
 		return instance;
 	}
-	
-	public MemberService(){}
+
+	private MemberService(){}
 	private MemberDAO dao = MemberDAO.getInstance();
-	
+
 	public boolean join(MemberVO member){
 		MemberVO savedMember = dao.select(member.getId());
 		if(savedMember != null){
@@ -25,7 +25,7 @@ public class MemberService {
 			}
 		}
 	}
-	
+
 	public boolean login(String id, String password){
 		MemberVO savedMember = dao.select(id);
 		if(savedMember != null && savedMember.getPassword().equals(password)){
@@ -34,7 +34,7 @@ public class MemberService {
 			return false;
 		}
 	}
-	
+
 	public boolean leave(String id, String password){
 		MemberVO savedMember = dao.select(id);
 		if(savedMember != null && savedMember.getPassword().equals(password)){
@@ -44,5 +44,5 @@ public class MemberService {
 			return false;
 		}
 	}
-	
+
 }
