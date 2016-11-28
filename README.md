@@ -14,6 +14,10 @@
 >* DB_ID: "root"
 >* DB_PASSWORD: "sds902"
 
+### 탬플릿 정보
+
+ https://shapebootstrap.net/items/html-templates/ecommerce?sort=popular
+
 ### DB 테이블 정보
 #### table name: member
 * id varchar(50) primary key not null
