@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import vo.ProductVO;
 
@@ -63,4 +65,43 @@ public class ProductDAO {
 		}
 		return result;
 	}
+	
+	public List<ProductVO> selectList(int startRow, int endRow){
+		Connection con = null;
+		PreparedStatement pstmt= null;
+		ResultSet rs = null;
+		List<ProductVO> productList = new ArrayList<>();
+		
+		try {
+		con = DBUtil.makeConnection();
+		String sql=
+		"SELECT * FROM PRODUCT ORDER BY PRODUCT_ID DESC LIMIT ?,?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, startRow);
+		pstmt.setInt(2, endRow);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			ProductVO product = new ProductVO();
+			product.setProductId(rs.getInt(1));
+			product.setProductName(rs.getString(2));
+			product.setProductAmount(rs.getInt(3));
+			product.setProductPrice(rs.getInt(4));
+			product.setProductDetail(rs.getString(5));
+			product.setProductImage(rs.getString(6));
+			product.setProductBrand(rs.getString(7));
+
+			productList.add(product);
+			}
+		} catch (SQLException e) {
+			System.out.println("selectList error");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);	
+		}
+		return productList;	
+	}
+	
+	
 }
