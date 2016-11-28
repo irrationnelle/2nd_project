@@ -2,7 +2,7 @@
 ## HTML, CSS, JavaScript, JSP를 이용하여 쇼핑몰 제작하기
 
 ### 사용기술
-* 서버: CentOS (OS) + nginx (Server) + Apache tomcat 9.0m (AWS)
+* 서버: CentOS (OS) + nginx (Server) + Apache tomcat 7.0 (WAS)
 * 프론트엔드 : 부트스트랩
 * 백엔드: JSP + JSTL
 * DB: MariaDB 10.1.19

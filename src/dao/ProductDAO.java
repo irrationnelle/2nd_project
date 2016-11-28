@@ -40,7 +40,7 @@ public class ProductDAO {
 					+ "PRODUCT_DETAIL,"
 					+ "PRODUCT_IMAGE,"
 					+ "PRODUCT_BRAND"
-					+ " FROM PRODUCT WHERE ID=?";
+					+ " FROM product WHERE ID=?";
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setInt(1, productId);
@@ -56,7 +56,7 @@ public class ProductDAO {
 				result.setProductBrand(resultset.getString(7));
 			}
 		} catch (SQLException e) {
-			System.out.println("select product ï¿½ï¿½ï¿½ï¿½");
+			System.out.println("select product ¿¡·¯");
 			e.printStackTrace();
 		} finally{
 			DBUtil.close(resultset);
@@ -73,27 +73,27 @@ public class ProductDAO {
 		List<ProductVO> productList = new ArrayList<>();
 		
 		try {
-		con = DBUtil.makeConnection();
-		String sql=
-		"SELECT * FROM PRODUCT ORDER BY PRODUCT_ID DESC LIMIT ?,?";
-		pstmt = con.prepareStatement(sql);
-		pstmt.setInt(1, startRow);
-		pstmt.setInt(2, endRow);
-		rs = pstmt.executeQuery();
-		while(rs.next()){
-			ProductVO product = new ProductVO();
-			product.setProductId(rs.getInt(1));
-			product.setProductName(rs.getString(2));
-			product.setProductAmount(rs.getInt(3));
-			product.setProductPrice(rs.getInt(4));
-			product.setProductDetail(rs.getString(5));
-			product.setProductImage(rs.getString(6));
-			product.setProductBrand(rs.getString(7));
-
-			productList.add(product);
+			con = DBUtil.makeConnection();
+			String sql=
+			"SELECT * FROM product ORDER BY PRODUCT_ID DESC LIMIT ?,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				ProductVO product = new ProductVO();
+				product.setProductId(rs.getInt(1));
+				product.setProductName(rs.getString(2));
+				product.setProductAmount(rs.getInt(3));
+				product.setProductPrice(rs.getInt(4));
+				product.setProductDetail(rs.getString(5));
+				product.setProductImage(rs.getString(6));
+				product.setProductBrand(rs.getString(7));
+	
+				productList.add(product);
 			}
 		} catch (SQLException e) {
-			System.out.println("selectList error");
+			System.out.println("selectList ¿¡·¯");
 			e.printStackTrace();
 		} finally {
 			DBUtil.close(rs);
@@ -102,6 +102,4 @@ public class ProductDAO {
 		}
 		return productList;	
 	}
-	
-	
 }
