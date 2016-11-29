@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import service.MemberService;
 import vo.MemberVO;
@@ -59,15 +60,12 @@ public class MemberController extends HttpServlet {
 			String id = request.getParameter("id");
 			String password = request.getParameter("password");
 			
-			System.out.println(id);
-			System.out.println(password);
-			
 			if (service.login(id, password) == true) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginId", id);
 			}
 			
-			System.out.println(id);
+			System.out.println((String)request.getAttribute("loginId"));
 			System.out.println(password);
 			
 			viewPath = "index.jsp";
