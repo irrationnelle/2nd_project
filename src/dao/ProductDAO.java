@@ -102,4 +102,38 @@ public class ProductDAO {
 		}
 		return productList;	
 	}
+
+	public void update(ProductVO product){
+		Connection connection = null;
+		PreparedStatement pstatement = null;
+		int result = 0;
+		
+		try {
+			connection = DBUtil.makeConnection();
+			String sql = "UPDATE PRODUCT SET (PRODUCT_ID,"
+					+ "PRODUCT_NAME,"
+					+ "PRODUCT_AMOUNT,"
+					+ "PRODUCT_PRICE,"
+					+ "PRODUCT_DETAIL,"
+					+ "PRODUCT_IMAGE,"
+					+ "PRODUCT_BRAND)"
+					+ "VALUES (?,?,?,?,?,?,?)";
+			pstatement = connection.prepareStatement(sql);
+			pstatement.setInt(1, product.getProductId());
+			pstatement.setString(2, product.getProductName());
+			pstatement.setInt(3, product.getProductAmount());
+			pstatement.setInt(4, product.getProductPrice());
+			pstatement.setString(5, product.getProductDetail());
+			pstatement.setString(6, product.getProductImage());
+			pstatement.setString(7, product.getProductBrand());
+		
+			result = pstatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("update product error");
+			e.printStackTrace();
+		} finally{
+			DBUtil.close(pstatement);
+			DBUtil.close(connection);
+		}
+	}
 }
