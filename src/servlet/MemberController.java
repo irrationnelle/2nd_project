@@ -36,12 +36,10 @@ public class MemberController extends HttpServlet {
 		String action = request.getParameter("action");
 		String viewPath = "";
 
-		System.out.println("test");
 		if (action.equals("joinForm")) {
 			// 회원가입 양식 보여주기
 			viewPath = "join_form.jsp";
 		} else if (action.equals("join")) {
-			System.out.println("test2");
 			// 입력한 내용으로 회원가입 진행
 			MemberVO member = new MemberVO();
 			member.setId(request.getParameter("id"));
