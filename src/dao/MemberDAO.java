@@ -20,7 +20,7 @@ public class MemberDAO {
 
 		try{
 		connection = DBUtil.makeConnection();
-		String sql = "INSERT INTO member (ID,PASSWOR D,EMAIL) VALUES (?,?,?)";
+		String sql = "INSERT INTO member (ID,PASSWORD,EMAIL) VALUES (?,?,?)";
 		pstatement = connection.prepareStatement(sql);
 		pstatement.setString(1, member.getId());
 		pstatement.setString(2, member.getPassword());
