@@ -6,17 +6,26 @@
 * 프론트엔드 : 부트스트랩
 * 백엔드: JSP + JSTL
 * DB: MariaDB 10.1.19
+* DB 컴퓨터 P/W : rStudy!234
 
 ### 개발환경
 >* 서버 IP: 70.12.109.114:8080
 >* DB_DRIVER: "org.mariadb.jdbc.Driver"
 >* DB_URL: "jdbc:mariadb://70.12.109.114:3306/project"
->* DB_ID: "root"
+>* DB_ID: "root"DES
 >* DB_PASSWORD: "sds902"
 
 ### 탬플릿 정보
 
  https://shapebootstrap.net/items/html-templates/ecommerce?sort=popular
+
+
+### 콘솔로 DB 접속 하는 법
+* 1. windows 키 + R
+* 2. cmd 입력
+* 3. mysql -h 70.12.109.114 -uroot -p
+* 4. 비밀번호 입력하라고 뜨면 : sds902 입력
+
 
 ### DB 테이블 정보
 #### table name: member
@@ -41,6 +50,7 @@
 * order_amount int not null,
 * product_id int not null,
 * foreign key(product_id) references product(product_id)
+* foreign key(user_id) references member(id)
 
 ##16. 11. 23
 ### 역할 분담!
