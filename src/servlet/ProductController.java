@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.ProductService;
 import vo.ProductPageVO;
+import vo.ProductVO;
 
 @WebServlet("/product.do")
 public class ProductController extends HttpServlet{

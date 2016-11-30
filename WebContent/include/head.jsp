@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 	<meta charset="utf-8" />
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +9,7 @@
     
     <!-- Favicons Icon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <title>Scilla</title>
+    <title>죽을만큼 코딩하면 죽을지도 모른다</title>
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     

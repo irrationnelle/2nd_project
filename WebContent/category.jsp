@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +34,9 @@
             </div>
             <!-- Inner Menu End -->
             
+            
             <section class="product_grid">
+            <c:forEach var="item" items="${requestScope.productPage.productList}">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <div class="product grid-sale product-wrapper ">
                         <!-- Item -->
@@ -64,163 +68,7 @@
                         <!-- End Item -->
                     </div>
                 </div>
-            	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="product grid-sale product-wrapper ">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="col-item">
-                                <div class="item-inner">
-                                    <div class="product-wrapper">
-                                        <div class="sale_tag"> SALE</div>
-                                        <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">wedding dress</a></h3>
-                                    <div class="ratings">
-                                        <div class="rating-box">
-                                            <div class="rating" style="width:20%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
-                                        <p class="special-price"><span class="price">$34.00</span></p>                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Item -->
-                    </div>
-                </div>            	                
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="product grid-sale product-wrapper">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="col-item">
-                                <div class="item-inner">
-                                    <div class="product-wrapper">
-                                        <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">Sober Top</a></h3>
-                                    <div class="ratings">
-                                        <div class="rating-box">
-                                            <div class="rating" style="width:20%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
-                                        <p class="special-price"><span class="price">$28.00</span></p>                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Item -->
-                    </div>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="product grid-sale product-wrapper">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="col-item">
-                                <div class="item-inner">
-                                    <div class="product-wrapper">
-                                        <div class="new_tag">NEW</div>
-                                        <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">Black Jacket</a></h3>
-                                    <div class="ratings">
-                                        <div class="rating-box">
-                                            <div class="rating" style="width:20%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
-                                        <p class="special-price"><span class="price">$64,999</span></p>                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Item -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="product grid-sale product-wrapper">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="col-item">
-                                <div class="item-inner">
-                                    <div class="product-wrapper">
-                                        <div class="sale_tag">SALE</div>
-                                        <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">Jackets</a></h3>
-                                    <div class="ratings">
-                                        <div class="rating-box">
-                                            <div class="rating" style="width:20%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
-                                        <p class="special-price"><span class="price">$34,999</span></p>                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Item -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="product grid-sale product-wrapper">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="col-item">
-                                <div class="item-inner">
-                                    <div class="product-wrapper">                                      
-                                        <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images/grid_pro.jpg">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">Fancy Gown</a></h3>
-                                    <div class="ratings">
-                                        <div class="rating-box">
-                                            <div class="rating" style="width:20%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="price-box">
-                                        <p class="special-price"><span class="price">$20.00</span></p>                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Item -->
-                    </div>
-                </div>
-                
+              </c:forEach>
             </section>
             
             <div class="clearfix"></div>

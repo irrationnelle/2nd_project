@@ -25,7 +25,6 @@ public class ProductDAO {
 //	private int productPrice;
 //	private String productDetail;
 //	private String productImage;
-//	private String productBrand;
 	public ProductVO select(int productId){
 		Connection connection = null;
 		PreparedStatement pstatement = null;
@@ -54,7 +53,6 @@ public class ProductDAO {
 				result.setProductPrice(resultset.getInt(4));
 				result.setProductDetail(resultset.getString(5));
 				result.setProductImage(resultset.getString(6));
-				result.setProductBrand(resultset.getString(7));
 			}
 		} catch (SQLException e) {
 			System.out.println("select product ¿¡·¯");
@@ -89,7 +87,6 @@ public class ProductDAO {
 				product.setProductPrice(rs.getInt(4));
 				product.setProductDetail(rs.getString(5));
 				product.setProductImage(rs.getString(6));
-				product.setProductBrand(rs.getString(7));
 	
 				productList.add(product);
 			}
@@ -126,7 +123,6 @@ public class ProductDAO {
 			pstatement.setInt(4, product.getProductPrice());
 			pstatement.setString(5, product.getProductDetail());
 			pstatement.setString(6, product.getProductImage());
-			pstatement.setString(7, product.getProductBrand());
 		
 			result = pstatement.executeUpdate();
 		} catch (SQLException e) {

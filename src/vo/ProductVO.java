@@ -7,7 +7,6 @@ public class ProductVO {
 	private int productPrice;
 	private String productDetail;
 	private String productImage;
-	private String productBrand;
 	
 	public ProductVO() {	}
 
@@ -19,7 +18,6 @@ public class ProductVO {
 		this.productPrice = productPrice;
 		this.productDetail = productDetail;
 		this.productImage = productImage;
-		this.productBrand = productBrand;
 	}
 
 	public int getProductId() {
@@ -70,18 +68,11 @@ public class ProductVO {
 		this.productImage = productImage;
 	}
 
-	public String getProductBrand() {
-		return productBrand;
-	}
-
-	public void setProductBrand(String productBrand) {
-		this.productBrand = productBrand;
-	}
 
 	@Override
 	public String toString() {
 		return "ProductVO [productId=" + productId + ", productName=" + productName + ", productStock=" + productStock
 				+ ", productPrice=" + productPrice + ", productDetail=" + productDetail + ", productImage="
-				+ productImage + ", productBrand=" + productBrand + "]";
+				+ productImage + "]";
 	}
 }

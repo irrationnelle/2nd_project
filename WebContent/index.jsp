@@ -30,7 +30,7 @@
                             <div class="col-lg-12 height">                            	
                             	<h5>그거 버릇이에요? 생각만 하는 거. 시뮬레이션만 하다가 본게임은 못하는 거</h5>
                                 <h1>창욱님</h1>
-                                <a class="mainpage_content_btn" href="category.jsp">지창욱과 저녁식사하고 싶다면?</a> 
+                                <a class="mainpage_content_btn" href="product.do?action=category">지창욱과 저녁식사하고 싶다면?</a> 
                             </div>                        
                         </div>
                         <div class="main_content_bg">
