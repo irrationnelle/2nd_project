@@ -142,7 +142,7 @@ public class ProductDAO {
 		
 		try {
 			con = DBUtil.makeConnection();
-			String sql = "SELECT COUNT(*) FROM PRODUCT";
+			String sql = "SELECT COUNT(*) FROM product";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			
