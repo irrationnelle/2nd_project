@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,5 +136,29 @@ public class ProductDAO {
 			DBUtil.close(pstatement);
 			DBUtil.close(connection);
 		}
+	}
+	
+	public int selectCount(){
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		
+		try {
+			con = DBUtil.makeConnection();
+			String sql = "SELECT COUNT(*) from product";
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			rs.next();
+			count = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(stmt);
+			DBUtil.close(con);
+		}
+		return count;
 	}
 }

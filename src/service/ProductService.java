@@ -25,7 +25,8 @@ public class ProductService {
 	}
 	
 	
-	public ProductPageVO makePage(int currentPage){
+	public ProductPageVO makePage(int 
+			currentPage){
 		final int PAGE_PER_COUNT = 6; // 한페이지에 보여질 글의갯수
 		
 		int startRow = (currentPage-1)*PAGE_PER_COUNT;
@@ -35,9 +36,12 @@ public class ProductService {
 		List<ProductVO> productList = 
 				dao.selectList(startRow, endRow);
 		
+		// 총 게시글 갯수 조회
+		int productTotalCount = dao.selectCount();
+		
 		// 총 페이지수 계산
-		int totalPage = articleTotalCount/PAGE_PER_COUNT;
-		if(articleTotalCount%PAGE_PER_COUNT != 0)
+		int totalPage = productTotalCount/PAGE_PER_COUNT;
+		if(productTotalCount%PAGE_PER_COUNT != 0)
 			totalPage++;
 		
 		// 페이지 하단의 시작페이지 계산
@@ -48,7 +52,7 @@ public class ProductService {
 		if(endPage>totalPage)
 			endPage = totalPage;
 		
-		return new ArticlePageVO(articleList,startPage,endPage,
+		return new ProductPageVO(productList,startPage,endPage,
 											currentPage,totalPage);
 	}
 	
