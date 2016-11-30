@@ -108,7 +108,7 @@ public class ProductDAO {
 		
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "UPDATE PRODUCT SET (PRODUCT_ID,"
+			String sql = "UPDATE product SET (PRODUCT_ID,"
 					+ "PRODUCT_NAME,"
 					+ "PRODUCT_STOCK,"
 					+ "PRODUCT_PRICE,"
@@ -142,7 +142,7 @@ public class ProductDAO {
 		
 		try {
 			con = DBUtil.makeConnection();
-			String sql = "SELECT COUNT(*) FROM PRODUCT";
+			String sql = "SELECT COUNT(*) FROM product";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			
