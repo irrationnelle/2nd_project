@@ -3,7 +3,7 @@ package vo;
 public class ProductVO {
 	private int productId;
 	private String productName;
-	private int productAmount;
+	private int productStock;
 	private int productPrice;
 	private String productDetail;
 	private String productImage;
@@ -11,11 +11,11 @@ public class ProductVO {
 	
 	public ProductVO() {	}
 
-	public ProductVO(int productId, String productName, int productAmount, int productPrice, String productDetail,
+	public ProductVO(int productId, String productName, int productStock, int productPrice, String productDetail,
 			String productImage, String productBrand) {
 		this.productId = productId;
 		this.productName = productName;
-		this.productAmount = productAmount;
+		this.productStock = productStock;
 		this.productPrice = productPrice;
 		this.productDetail = productDetail;
 		this.productImage = productImage;
@@ -38,12 +38,12 @@ public class ProductVO {
 		this.productName = productName;
 	}
 
-	public int getProductAmount() {
-		return productAmount;
+	public int getProductStock() {
+		return productStock;
 	}
 
-	public void setProductAmount(int productAmount) {
-		this.productAmount = productAmount;
+	public void setProductStock(int productStock) {
+		this.productStock = productStock;
 	}
 
 	public int getProductPrice() {
@@ -80,7 +80,7 @@ public class ProductVO {
 
 	@Override
 	public String toString() {
-		return "ProductVO [productId=" + productId + ", productName=" + productName + ", productAmount=" + productAmount
+		return "ProductVO [productId=" + productId + ", productName=" + productName + ", productStock=" + productStock
 				+ ", productPrice=" + productPrice + ", productDetail=" + productDetail + ", productImage="
 				+ productImage + ", productBrand=" + productBrand + "]";
 	}

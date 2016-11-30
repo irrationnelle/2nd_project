@@ -3,77 +3,70 @@ package vo;
 import java.sql.Timestamp;
 
 public class OrderInfoVO {
-	private int orderID;
+	private int orderPk;
+	private int orderId;
 	private Timestamp orderDate;
-	private int orderPrice;
-	private int orderTotalprice;
 	private int orderAmount;
-	private int productID;
+	private int orderStatus;
+	private int productId;
+	private int Id;
 	
-	public OrderInfoVO() {	}
-
-	public OrderInfoVO(int orderID, Timestamp orderDate, int orderPrice, int orderTotalprice, int orderAmount,
-			int productID) {
-		this.orderID = orderID;
+	public OrderInfoVO(){};
+	
+	public OrderInfoVO(int orderPk, int orderId, Timestamp orderDate, int orderAmount, int orderStatus, int productId,
+			int id) {
+		super();
+		this.orderPk = orderPk;
+		this.orderId = orderId;
 		this.orderDate = orderDate;
-		this.orderPrice = orderPrice;
-		this.orderTotalprice = orderTotalprice;
 		this.orderAmount = orderAmount;
-		this.productID = productID;
+		this.orderStatus = orderStatus;
+		this.productId = productId;
+		Id = id;
 	}
-
-	public int getOrderID() {
-		return orderID;
+	
+	public int getOrderPk() {
+		return orderPk;
 	}
-
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
+	public void setOrderPk(int orderPk) {
+		this.orderPk = orderPk;
 	}
-
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
 	public Timestamp getOrderDate() {
 		return orderDate;
 	}
-
 	public void setOrderDate(Timestamp orderDate) {
 		this.orderDate = orderDate;
 	}
-
-	public int getOrderPrice() {
-		return orderPrice;
-	}
-
-	public void setOrderPrice(int orderPrice) {
-		this.orderPrice = orderPrice;
-	}
-
-	public int getOrderTotalprice() {
-		return orderTotalprice;
-	}
-
-	public void setOrderTotalprice(int orderTotalprice) {
-		this.orderTotalprice = orderTotalprice;
-	}
-
 	public int getOrderAmount() {
 		return orderAmount;
 	}
-
 	public void setOrderAmount(int orderAmount) {
 		this.orderAmount = orderAmount;
 	}
-
-	public int getProductID() {
-		return productID;
+	public int getOrderStatus() {
+		return orderStatus;
 	}
-
-	public void setProductID(int productID) {
-		this.productID = productID;
+	public void setOrderStatus(int orderStatus) {
+		this.orderStatus = orderStatus;
 	}
-
-	@Override
-	public String toString() {
-		return "OrderInfoVO [orderID=" + orderID + ", orderDate=" + orderDate + ", orderPrice=" + orderPrice
-				+ ", orderTotalprice=" + orderTotalprice + ", orderAmount=" + orderAmount + ", productID=" + productID
-				+ "]";
+	public int getProductId() {
+		return productId;
 	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	
+	
 }

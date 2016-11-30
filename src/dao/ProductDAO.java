@@ -21,7 +21,7 @@ public class ProductDAO {
 	//DB Select Method
 //	private int productId;
 //	private String productName;
-//	private int productAmount;
+//	private int productStock;
 //	private int productPrice;
 //	private String productDetail;
 //	private String productImage;
@@ -36,7 +36,7 @@ public class ProductDAO {
 			connection = DBUtil.makeConnection();
 			String sql = "SELECT PRODUCT_ID,"
 					+ "PRODUCT_NAME,"
-					+ "PRODUCT_AMOUNT,"
+					+ "PRODUCT_STOCK,"
 					+ "PRODUCT_PRICE,"
 					+ "PRODUCT_DETAIL,"
 					+ "PRODUCT_IMAGE,"
@@ -50,7 +50,7 @@ public class ProductDAO {
 				result = new ProductVO();
 				result.setProductId(resultset.getInt(1));
 				result.setProductName(resultset.getString(2));
-				result.setProductAmount(resultset.getInt(3));
+				result.setProductStock(resultset.getInt(3));
 				result.setProductPrice(resultset.getInt(4));
 				result.setProductDetail(resultset.getString(5));
 				result.setProductImage(resultset.getString(6));
@@ -85,7 +85,7 @@ public class ProductDAO {
 				ProductVO product = new ProductVO();
 				product.setProductId(rs.getInt(1));
 				product.setProductName(rs.getString(2));
-				product.setProductAmount(rs.getInt(3));
+				product.setProductStock(rs.getInt(3));
 				product.setProductPrice(rs.getInt(4));
 				product.setProductDetail(rs.getString(5));
 				product.setProductImage(rs.getString(6));
@@ -113,7 +113,7 @@ public class ProductDAO {
 			connection = DBUtil.makeConnection();
 			String sql = "UPDATE PRODUCT SET (PRODUCT_ID,"
 					+ "PRODUCT_NAME,"
-					+ "PRODUCT_AMOUNT,"
+					+ "PRODUCT_STOCK,"
 					+ "PRODUCT_PRICE,"
 					+ "PRODUCT_DETAIL,"
 					+ "PRODUCT_IMAGE,"
@@ -122,7 +122,7 @@ public class ProductDAO {
 			pstatement = connection.prepareStatement(sql);
 			pstatement.setInt(1, product.getProductId());
 			pstatement.setString(2, product.getProductName());
-			pstatement.setInt(3, product.getProductAmount());
+			pstatement.setInt(3, product.getProductStock());
 			pstatement.setInt(4, product.getProductPrice());
 			pstatement.setString(5, product.getProductDetail());
 			pstatement.setString(6, product.getProductImage());
@@ -146,7 +146,7 @@ public class ProductDAO {
 		
 		try {
 			con = DBUtil.makeConnection();
-			String sql = "SELECT COUNT(*) from product";
+			String sql = "SELECT COUNT(*) FROM PRODUCT";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			
