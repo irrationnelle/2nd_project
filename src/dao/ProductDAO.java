@@ -108,7 +108,7 @@ public class ProductDAO {
 		
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "UPDATE PRODUCT SET (PRODUCT_ID,"
+			String sql = "UPDATE product SET (PRODUCT_ID,"
 					+ "PRODUCT_NAME,"
 					+ "PRODUCT_STOCK,"
 					+ "PRODUCT_PRICE,"

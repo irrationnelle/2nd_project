@@ -47,8 +47,8 @@
                                         <div class="sale_tag"> SALE</div>
                                         <div class="thumb-wrapper img_mask">
                                             <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="product_images\product_1.jpg">
-                                                <img class="back_image" alt="Pro Image" src="product_images\product_1.jpg">
+                                                <img class="front_image" alt="Pro Image" src="${item.productImage}">
+                                                <img class="back_image" alt="Pro Image" src="${item.productImage}">
                                             </a>
                                         </div>
                                     </div>
@@ -79,9 +79,10 @@
                         <ul class="pagination">
                             <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                             <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
+                            <c:forEach var="i" begin="${requestScope.productPage.startPage}" end="${requestScope.productPage.endPage}">
+                            	<li>${i}</li>
+                            </c:forEach>
+                            
                             <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                         </ul>
                     </div>
