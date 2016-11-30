@@ -50,6 +50,7 @@ public class ProductController extends HttpServlet{
 			
 			ProductPageVO productPage = service.makePage(currentPage);
 			request.setAttribute("productPage", productPage);
+			System.out.println(productPage.getTotalPage());
 			viewPath = "category.jsp";
 			break;
 		

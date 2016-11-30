@@ -58,3 +58,4 @@ public class CartVO {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
+}
