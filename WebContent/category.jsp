@@ -53,14 +53,14 @@
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">Short Gown</a></h3>
+                                    <h3 class="product_title"><a href="product_detail.jsp">${item.productName}</a></h3>
                                     <div class="ratings">
                                         <div class="rating-box">
                                             <div class="rating" style="width:20%"></div>
                                         </div>
                                     </div>
                                     <div class="price-box">
-                                        <p class="special-price"><span class="price">$34.00</span></p>                        
+                                        <p class="special-price"><span class="price">${item.productPrice}</span></p>                        
                                     </div>
                                 </div>
                             </div>
@@ -78,11 +78,10 @@
                     <div class="pages">
                         <ul class="pagination">
                             <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                            <li class="active"><a href="">1</a></li>
-                            <c:forEach var="i" begin="${requestScope.productPage.startPage}" end="${requestScope.productPage.endPage}">
-                            	<li><a href="product.do?action=category&page=${i}">${i}</li>
-                            </c:forEach>
-                            
+<!--                             <li class="active"><a href="">1</a></li> -->
+	                            <c:forEach var="i" begin="${requestScope.productPage.startPage}" end="${requestScope.productPage.endPage}">
+	                            	<li><a href="product.do?action=category&page=${i}">${i}</a></li>
+	                            </c:forEach>
                             <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                         </ul>
                     </div>
