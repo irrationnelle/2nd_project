@@ -15,10 +15,6 @@
 >* DB_ID: "root"
 >* DB_PASSWORD: "sds902"
 
-### 탬플릿 정보
-
- https://shapebootstrap.net/items/html-templates/ecommerce?sort=popular
-
 
 ### 콘솔로 DB 접속 하는 법
 * 1. windows 키 + R
@@ -36,21 +32,19 @@
 #### table name: product
 * product_id int primary key not null auto_increment,
 * product_name varchar(100) not null,
-										** product_amount int not null,
 * product_stock int not null,
 * product_price int not null,
 * product_detail text not null,
-* product_image text not null,
-* product_brand varchar(100) not null);
+* product_image text not null
 
-### table name: cart
+#### table name: cart
 * cart_pk int primary key not null auto_increment,
 * cart_id int not null,
 * cart_amount int not null,
-* user_id varchar(50) not null foreign key references member(id) ,
-* product_id int not null foreign key references product(product_id());
-order에 보낼 totalPrice는 자바단에서 구현하기
-
+* user_id varchar(50) not null,
+* product_id int not null,
+* foreign key(user_id) references member(id),
+* foreign key(product_id) references product(product_id)
 
 #### table name: order_info
 * order_pk int primary key not null auto_increment,  
@@ -58,8 +52,10 @@ order에 보낼 totalPrice는 자바단에서 구현하기
 * order_date datetime not null,
 * order_amount int not null,
 * order_status varchar(100) not null,
-* user_id varchar(50) not null foreign key references member(id),
-* product_id int not null foreign key references product(product_id));
+* user_id varchar(50) not null,
+* product_id int not null,
+* foreign key(user_id) references member(id),
+* foreign key(product_id) references product(product_id)
 
 ##16. 11. 23
 ### 역할 분담!
@@ -83,9 +79,9 @@ order에 보낼 totalPrice는 자바단에서 구현하기
 * 메소드 작명 규칙
 	* make: 생성과 관련된 메소드 접두어
 		* i.e) makePage(), makeConnection()
-	* change:
-	* show:
-	* insert:
-	* delete:
+	* show: 화면에 정보를 표시할 때 사용하는 메소드 접두어 
+	* change: 화면에 표시되는 정보를 변경할 때 사용하는 메소드 접두어
+	* delete: 삭제 관련 메소드 접두어
+	* insert: DB에 VO객체를 통해 정보 입력할 때 사용하는 접두어 
 	* select: DB에서 정보를 읽어올 때 사용하는 접두어
 		* i.e) selectMember(), selectId()
