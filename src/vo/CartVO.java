@@ -2,15 +2,15 @@ package vo;
 
 public class CartVO {
 	private int cartPk;
-	private String cartId;
+	private int cartId;
 	private int cartAmount;
 	private String userId;
-	private String productId;
+	private int productId;
 
 	public CartVO() {
 	}
 
-	public CartVO(int cartPk, String cartId, int cartAmount, String userId, String productId) {
+	public CartVO(int cartPk, int cartId, int cartAmount, String userId, int productId) {
 		super();
 		this.cartPk = cartPk;
 		this.cartId = cartId;
@@ -27,11 +27,11 @@ public class CartVO {
 		this.cartPk = cartPk;
 	}
 
-	public String getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
 
-	public void setCartId(String cartId) {
+	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
 
@@ -51,12 +51,10 @@ public class CartVO {
 		this.userId = userId;
 	}
 
-	public String getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-
-}
