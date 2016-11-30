@@ -80,7 +80,7 @@
                             <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                             <li class="active"><a href="">1</a></li>
                             <c:forEach var="i" begin="${requestScope.productPage.startPage}" end="${requestScope.productPage.endPage}">
-                            	<li>${i}</li>
+                            	<li><a href="product.do?page=${i}">${i}</li>
                             </c:forEach>
                             
                             <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
