@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.ProductService;
+import vo.ProductPageVO;
 
 @WebServlet("/product.do")
 public class ProductController extends HttpServlet{
@@ -34,8 +36,28 @@ public class ProductController extends HttpServlet{
 		String action = request.getParameter("action");
 		String viewPath = "";
 		
+		ProductService service = ProductService.getInstance();
 		
+		switch(action){
+		case "category":
+			int currentPage = 1;
+			String currentPageStr = request.getParameter("page");
+			
+			if(currentPageStr != null && currentPageStr.length()>=0) {
+				currentPage = Integer.parseInt(currentPageStr);
+			}
+			
+			ProductPageVO productPage = service.makePage(currentPage);
+			request.setAttribute("productPage", productPage);
+			break;
 		
+		case "detail":
+			
+			break;
+		}
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+		dispatcher.forward(request, response);
 		
 	}
 }
