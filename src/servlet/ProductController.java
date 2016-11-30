@@ -49,9 +49,20 @@ public class ProductController extends HttpServlet{
 			
 			ProductPageVO productPage = service.makePage(currentPage);
 			request.setAttribute("productPage", productPage);
+			viewPath = "category.jsp";
 			break;
 		
 		case "detail":
+			int clickProduct = 1;
+			String clickProductStr = request.getParameter("productNum");
+			
+			if(clickProductStr != null && clickProductStr.length()>=0) {
+				clickProduct = Integer.parseInt(clickProductStr);
+			}
+			
+			ProductVO productDetail = service.showDetails(clickProduct);
+			request.setAttribute("productDetail", productDetail);
+			viewPath = "product_detail.jsp";
 			
 			break;
 		}
