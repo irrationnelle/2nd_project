@@ -25,7 +25,8 @@
             <div class="content-wrapper">		
                 <section class="main_content">
                     <div class="full_screen">
-                        <div class="mainpage_content height">
+                        <div class=
+                        "mainpage_content height">
                             <div class="col-lg-12 height">                            	
                             	<h5>그거 버릇이에요? 생각만 하는 거. 시뮬레이션만 하다가 본게임은 못하는 거</h5>
                                 <h1>창욱님</h1>

@@ -12,7 +12,7 @@
 >* 서버 IP: 70.12.109.114:8080
 >* DB_DRIVER: "org.mariadb.jdbc.Driver"
 >* DB_URL: "jdbc:mariadb://70.12.109.114:3306/project"
->* DB_ID: "root"DES
+>* DB_ID: "root"
 >* DB_PASSWORD: "sds902"
 
 ### 탬플릿 정보
@@ -36,18 +36,36 @@
 #### table name: product
 * product_id int primary key not null auto_increment,
 * product_name varchar(100) not null,
-* product_amount int not null,
+										** product_amount int not null,
+* product_stock int not null,
 * product_price int not null,
 * product_detail text not null,
 * product_image text not null,
 * product_brand varchar(100) not null);
 
+### table name: cart
+* cart_pk int primary key not null auto_increment,
+* cart_id int,
+* cart_product_amount int not null,
+* user_id varchar(50) foreign key references member(id) not null,
+* product_id int foreign key references product(product_id) not null,
+** product_name varchar(100) foreign key references product(product_name) not null,,
+* product_price int foreign key references product(product_price) not null,
+* product_image text foreign key references product(product_image) not null
+
+order에 보낼 totalPrice는 자바단에서 구현하기
+ 
+
 #### table name: order_info
-* order_id int primary key not null auto_increment,
+* order_pk int primary key not null auto_increment,  
+* order_id int not null,
 * order_date datetime not null,
-* order_price int not null,
-* order_totalprice int not null,
 * order_amount int not null,
+** order_status text not null,
+** product_name varchar(100) foreign key references product(product_name) not null,,
+** product_price int foreign key references product(product_price) not null,
+										** order_totalprice int not null, order에 보낼 totalPrice는 자바단에서 구현하기
+** product_image text foreign key references product(product_image) not null
 * product_id int not null,
 * foreign key(product_id) references product(product_id)
 * foreign key(user_id) references member(id)

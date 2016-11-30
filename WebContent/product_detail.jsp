@@ -27,7 +27,7 @@
                                 <div class="flexslider">
                                     <ul class="slides">
 <!--                                         <li><img alt="" class="img-responsive" src="product_images/pro_det_image.jpg" height="450" width="400" ></li> -->
-                                        <li><img alt="" class="img-responsive" src="http://www.getitk.com/wp-content/uploads/2016/08/081702-1-819x1024.jpg"> </li>
+                                        <li><img alt="" class="img-responsive" src="product_images\product_det1.jpg"> </li>
                                         <li><img alt="" class="img-responsive" src="http://www.r16korea.com/site/wp-content/uploads/2014/05/JAY-PARK_PHOTO_2014ver-1-819x1024.jpg" > </li>
                                         <li><img alt="" class="img-responsive" src="https://pbs.twimg.com/media/CkVDCFSVAAAoHFA.jpg"> </li>				
                                     </ul>

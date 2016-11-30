@@ -43,8 +43,8 @@
                                         <div class="sale_tag"> SALE</div>
                                         <div class="thumb-wrapper img_mask">
                                             <a class="product_image image-wrapper" href="product_detail.jsp">
-                                                <img class="front_image" alt="Pro Image" src="http://file2.instiz.net/data/cached_img/upload/2015051723/820024b6656f0a3583ca66cccf89e289.jpg">
-                                                <img class="back_image" alt="Pro Image" src="https://pbs.twimg.com/media/CDV0p0VUIAAescU.jpg">
+                                                <img class="front_image" alt="Pro Image" src="product_images\product_1.jpg">
+                                                <img class="back_image" alt="Pro Image" src="product_images\product_1.jpg">
                                             </a>
                                         </div>
                                     </div>
