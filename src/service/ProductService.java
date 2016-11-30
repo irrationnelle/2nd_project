@@ -15,12 +15,13 @@ public class ProductService {
 	private ProductService(){}
 	private ProductDAO dao = ProductDAO.getInstance();
 	
-	public boolean showDetails(ProductVO product){
-		ProductVO clickedProduct = dao.select(product.getProductId());
+	public ProductVO showDetails(int productId){
+		ProductVO clickedProduct = dao.select(productId);
 		if(clickedProduct !=null){
-			return true;
+			return clickedProduct;
 		} else {
-			return false;
+			
+			return null;
 		}
 	}
 	
@@ -57,6 +58,9 @@ public class ProductService {
 	}
 	
 	
+	public ProductVO changeStock(int orderAmount) {
+		return new ProductVO();
+	}
 	
 	
 }

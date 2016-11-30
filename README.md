@@ -44,31 +44,31 @@
 * product_brand varchar(100) not null);
 
 ### table name: cart
-* cart_pk int primary key not null auto_increment,
-* cart_id int,
-* cart_product_amount int not null,
-* user_id varchar(50) foreign key references member(id) not null,
-* product_id int foreign key references product(product_id) not null,
-** product_name varchar(100) foreign key references product(product_name) not null,,
-* product_price int foreign key references product(product_price) not null,
-* product_image text foreign key references product(product_image) not null
+cart_pk int primary key not null auto_increment,
+cart_id int,
+cart_product_amount int not null,
+user_id varchar(50) not null references member(id) ,
+product_id int not null references product(product_id) ,
+product_name varchar(100) not null references product(product_name) ,
+product_price int  not null references product(product_price),
+product_image text not null references product(product_image) 
 
 order에 보낼 totalPrice는 자바단에서 구현하기
  
 
 #### table name: order_info
-* order_pk int primary key not null auto_increment,  
-* order_id int not null,
-* order_date datetime not null,
-* order_amount int not null,
-** order_status text not null,
-** product_name varchar(100) foreign key references product(product_name) not null,,
-** product_price int foreign key references product(product_price) not null,
-										** order_totalprice int not null, order에 보낼 totalPrice는 자바단에서 구현하기
-** product_image text foreign key references product(product_image) not null
-* product_id int not null,
-* foreign key(product_id) references product(product_id)
-* foreign key(user_id) references member(id)
+order_pk int primary key not null auto_increment,  
+order_id int not null,
+order_date datetime not null,
+order_amount int not null,
+order_status text not null,
+product_id int not null references product(product_id),
+product_name varchar(100) not null references product(product_name),
+product_price int not null references product(product_price),
+product_image text not null references product(product_image),
+user_id varchar(50) not null references member(id)
+foreign key(product_id) references product(product_id),
+foreign key(user_id) references member(id)
 
 ##16. 11. 23
 ### 역할 분담!
@@ -92,5 +92,9 @@ order에 보낼 totalPrice는 자바단에서 구현하기
 * 메소드 작명 규칙
 	* make: 생성과 관련된 메소드 접두어
 		* i.e) makePage(), makeConnection()
+	* change:
+	* show:	
+	* insert:
+	* delete:
 	* select: DB에서 정보를 읽어올 때 사용하는 접두어
 		* i.e) selectMember(), selectId()
