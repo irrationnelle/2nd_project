@@ -44,31 +44,22 @@
 * product_brand varchar(100) not null);
 
 ### table name: cart
-cart_pk int primary key not null auto_increment,
-cart_id int,
-cart_product_amount int not null,
-user_id varchar(50) not null references member(id) ,
-product_id int not null references product(product_id) ,
-product_name varchar(100) not null references product(product_name) ,
-product_price int  not null references product(product_price),
-product_image text not null references product(product_image) 
-
+* cart_pk int primary key not null auto_increment,
+* cart_id int not null,
+* cart_amount int not null,
+* user_id varchar(50) not null foreign key references member(id) ,
+* product_id int not null foreign key references product(product_id());
 order에 보낼 totalPrice는 자바단에서 구현하기
- 
+
 
 #### table name: order_info
-order_pk int primary key not null auto_increment,  
-order_id int not null,
-order_date datetime not null,
-order_amount int not null,
-order_status text not null,
-product_id int not null references product(product_id),
-product_name varchar(100) not null references product(product_name),
-product_price int not null references product(product_price),
-product_image text not null references product(product_image),
-user_id varchar(50) not null references member(id)
-foreign key(product_id) references product(product_id),
-foreign key(user_id) references member(id)
+* order_pk int primary key not null auto_increment,  
+* order_id int not null,
+* order_date datetime not null,
+* order_amount int not null,
+* order_status varchar(100) not null,
+* user_id varchar(50) not null foreign key references member(id),
+* product_id int not null foreign key references product(product_id));
 
 ##16. 11. 23
 ### 역할 분담!
@@ -76,14 +67,14 @@ foreign key(user_id) references member(id)
 * 서창원: ProductDAO, OrderInfoDAO 클래스
 * 송지원: 서블릿 작업(아마도 ProductController, OrderInfoController 클래스)
 * 안현석: ProductService, OrderInfoService 클래스
- 
+
 ##16. 11. 14
 ### 역할 분담!
 * 강은선: MemberService 클래스
 * 서창원: MemberController 클래스
 * 송지원: MemberDAO 클래스
 * 안현석: 프론트엔드 + JSP
- 
+
 ### 코딩 규칙 CODING CONVENTION
 * 클래스명은 첫글자 대문자로 camelCase를 지켜준다.
 	* i.e) MemberService
@@ -93,7 +84,7 @@ foreign key(user_id) references member(id)
 	* make: 생성과 관련된 메소드 접두어
 		* i.e) makePage(), makeConnection()
 	* change:
-	* show:	
+	* show:
 	* insert:
 	* delete:
 	* select: DB에서 정보를 읽어올 때 사용하는 접두어
