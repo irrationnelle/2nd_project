@@ -15,7 +15,7 @@ import vo.ProductVO;
 
 @WebServlet("/cart.do")
 public class CartController extends HttpServlet{
-	
+	/*
 	private CartService service = CartService.getInstance();
 	
 	@Override
@@ -80,4 +80,5 @@ public class CartController extends HttpServlet{
 		}
 		
 	}
+	*/
 }
