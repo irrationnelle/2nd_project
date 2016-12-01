@@ -37,9 +37,9 @@ public class MemberController extends HttpServlet {
 		String action = request.getParameter("action");
 		String viewPath = "";
 
-		if (action.equals("joinForm")) {
+		if (action.equals("register")) {
 			// 회원가입 양식 보여주기
-			viewPath = "join_form.jsp";
+			viewPath = "register.jsp";
 		} else if (action.equals("join")) {
 			// 입력한 내용으로 회원가입 진행
 			MemberVO member = new MemberVO();
@@ -53,9 +53,8 @@ public class MemberController extends HttpServlet {
 			} else {
 				viewPath = "join_fail.jsp";
 			}
-			
-			
-			
+		} else if (action.equals("signin")) {
+			viewPath = "login.jsp";
 		} else if (action.equals("login")) {
 			String id = request.getParameter("id");
 			String password = request.getParameter("password");

@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 				<div class="top_bar ff-section">                   
                     <div class="middle-nav">
                         <!-- Left Menu Holder -->
@@ -138,8 +140,17 @@
                                     <li><a class="nav_link" href="">Account</a>
                                         <div class="cat_submenuwrap">
                                             <ul class="cat_submenu">
-                                                <li><a href="register.jsp">Register</a></li>
-                                                <li><a href="login.jsp">Login</a></li>
+                                            	<c:choose>
+                                            		<c:when test="${empty sessionScope.loginId}">
+                                                		<li><a href="member.do?action=register">Register</a></li>
+                                                		<li><a href="member.do?action=signin">Login</a></li>
+                                                	</c:when>
+                                                	<c:otherwise>
+                                                		<li><a href="member.do?action=logout">Logout</a></li>
+                                                		<li><a href="cart.do?action=showCart&userId=${sessionScope.loginId}">Shopping Cart</a></li>
+		                                                <li><a href="order.do?action=showOrder">Dashboard</a></li>
+		                                            </c:otherwise>
+                                            	</c:choose>
                                             </ul>
                                         </div>
                                     </li>

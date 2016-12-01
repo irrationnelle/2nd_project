@@ -43,6 +43,7 @@ public class OrderInfoController extends HttpServlet {
 		int orderId = -1;
 		
 		int result = -1;
+		List<OrderInfoVO> orderInfoList = null;
 
 		switch (action) {
 		case "checkout":
@@ -56,9 +57,15 @@ public class OrderInfoController extends HttpServlet {
 			cartList = cService.showCartList(userId);
 			orderId = oService.insertOrderInfo(cartList);
 			
-			List<OrderInfoVO> orderInfoList = oService.showOrderInfoList(userId);
+			orderInfoList = oService.showOrderInfoList(userId);
 			request.setAttribute("orderInfoList", orderInfoList);
 			result = cService.clearCart(userId);
+			viewPath="dashboard.jsp";
+			break;
+			
+		case "showOrder":
+			orderInfoList = oService.showOrderInfoList(userId);
+			request.setAttribute("orderInfoList", orderInfoList);
 			viewPath="dashboard.jsp";
 			break;
 		}

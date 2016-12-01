@@ -27,7 +27,7 @@
       <div class="row">
 		<div class="page_title">
 			<div class="page_top">
-				<h1> DASHBOARD </h1>
+				<h1> 주문 확인 </h1>
 			</div>
 		</div>
 	</div>
@@ -39,12 +39,12 @@
         <div class="my-account">
           
           <div class="dashboard">
-            <div class="welcome-msg"> <strong>Hello, ${sessionScope.loginId}</strong>
-              <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+            <div class="welcome-msg"> <strong>안녕하세요, ${sessionScope.loginId} 님!</strong>
+              <p>우리 서비스를 이용해주셔서 감사합니다! =)</p>
             </div>
             <div class="recent-orders">
                 <div class="page-title">
-                <h2>Recent Orders</h2>
+                <h2>최근 주문 내역</h2>
               </div>
               <div class="table-responsive">
                 <table class="data-table" id="my-orders-table">
@@ -56,11 +56,11 @@
                   <col>
                   <thead>
                     <tr class="first last">
-                      <th>Order #</th>
-                      <th>Date</th>
-                      <th>Ship to</th>
-                      <th><span class="nobr">Order Total</span></th>
-                      <th>Status</th>
+                      <th>주문 번호 #</th>
+                      <th>주문 일자</th>
+                      <th>받는 사람</th>
+                      <th><span class="nobr">총 금액</span></th>
+                      <th>현재 상태</th>
                       <th>&nbsp;</th>
                     </tr>
                   </thead>
@@ -79,50 +79,50 @@
                 </table>
               </div>
             </div>
-            <div class="box-account">
-              <div class="page-title">
-                <h2>Account Information</h2>
-              </div>
-              <div class="col2-set">
-                <div class="col-1">
-                  <h5>Contact Information</h5>
-                  <a href="#">Edit</a>
-                  <p> Thomas J<br>
-                    johndoe5@gmail.com<br>
-                    <a href="#">Change Password</a> </p>
-                </div>
-                <div class="col-2">
-                  <h5>Newsletters</h5>
-                  <a href="#">Edit</a>
-                  <p> You are currently not subscribed to any newsletter. </p>
-                </div>
-              </div>
-              <div class="col2-set">
-                <h4>Address Book</h4>
-                <div class="manage_add"><a href="#">Manage Addresses</a> </div>
-                <div class="col-1">
-                  <h5>Primary Billing Address</h5>
-                  <address>
-                  John D.<br>
-                  512 North catalina Avenue, No.3002<br>
-                   Redondo Beach, Callfornia<br>
-                  United States<br>
-                  T: 454541 <br>
-                  <a href="#">Edit Address</a>
-                  </address>
-                </div>
-                <div class="col-2">
-                  <h5>Primary Shipping Address</h5>
-                  <address>
-                  John D.<br>
-                  512 North catalina Avenue, No.3002<br>
-                   Redondo Beach, Callfornia<br>
-                  United States<br>
-                  T: 454541 <br>
-                  <a href="#">Edit Address</a>
-                  </address>
-                </div>
-              </div>
+<!--             <div class="box-account"> -->
+<!--               <div class="page-title"> -->
+<!--                 <h2>Account Information</h2> -->
+<!--               </div> -->
+<!--               <div class="col2-set"> -->
+<!--                 <div class="col-1"> -->
+<!--                   <h5>Contact Information</h5> -->
+<!--                   <a href="#">Edit</a> -->
+<!--                   <p> Thomas J<br> -->
+<!--                     johndoe5@gmail.com<br> -->
+<!--                     <a href="#">Change Password</a> </p> -->
+<!--                 </div> -->
+<!--                 <div class="col-2"> -->
+<!--                   <h5>Newsletters</h5> -->
+<!--                   <a href="#">Edit</a> -->
+<!--                   <p> You are currently not subscribed to any newsletter. </p> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--               <div class="col2-set"> -->
+<!--                 <h4>Address Book</h4> -->
+<!--                 <div class="manage_add"><a href="#">Manage Addresses</a> </div> -->
+<!--                 <div class="col-1"> -->
+<!--                   <h5>Primary Billing Address</h5> -->
+<!--                   <address> -->
+<!--                   John D.<br> -->
+<!--                   512 North catalina Avenue, No.3002<br> -->
+<!--                    Redondo Beach, Callfornia<br> -->
+<!--                   United States<br> -->
+<!--                   T: 454541 <br> -->
+<!--                   <a href="#">Edit Address</a> -->
+<!--                   </address> -->
+<!--                 </div> -->
+<!--                 <div class="col-2"> -->
+<!--                   <h5>Primary Shipping Address</h5> -->
+<!--                   <address> -->
+<!--                   John D.<br> -->
+<!--                   512 North catalina Avenue, No.3002<br> -->
+<!--                    Redondo Beach, Callfornia<br> -->
+<!--                   United States<br> -->
+<!--                   T: 454541 <br> -->
+<!--                   <a href="#">Edit Address</a> -->
+<!--                   </address> -->
+<!--                 </div> -->
+<!--               </div> -->
             </div>
           </div>
         </div>
