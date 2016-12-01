@@ -38,6 +38,7 @@ public class CartController extends HttpServlet{
 		String viewPath = "";
 		
 		switch (action) {
+		
 		case "cart":
 	
 			String clickAddCartStr = request.getParameter("addCart");
@@ -80,7 +81,7 @@ public class CartController extends HttpServlet{
 			request.setAttribute("cartList", cartList);
 			viewPath = "cartList.jsp";
 			break;
-	
+	// 우와 과자다!! 감사합니다!!하하 이얏호!!!!!!!!!!!!
 		}
 		
 	}
