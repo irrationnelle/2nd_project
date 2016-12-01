@@ -88,9 +88,11 @@
                                     </select>
                                 </label>
                             </div>
-                            <div class="col-lg-12 button_margin">
-                                <button id="AddToCart" class="btn btn--expand btn--ghost" name="add" type="submit" onclick="location.href='cart.do?action=addcart&amount=1&productId=${requestScope.productDetail.productId}'";><span id="AddToCartText">Add to Cart</span></button>
-                            </div>
+                            <c:if test="${not empty sessionScope.loginId}">
+	                            <div class="col-lg-12 button_margin">
+	                                <button id="AddToCart" class="btn btn--expand btn--ghost" name="add" type="submit" onclick="location.href='cart.do?action=addcart&amount=1&productId=${requestScope.productDetail.productId}'";><span id="AddToCartText">Add to Cart</span></button>
+	                            </div>
+                            </c:if>
                         </div>
                     </div>
                 </div>

@@ -111,31 +111,31 @@
                                         </div>
                                     </li>
                                                                 
-                                    <li><a class="nav_link" href="">Page</a>
-                                        <div class="cat_submenuwrap">
-                                            <ul class="cat_submenu">
-                                                <li><a href="category.jsp">Grid</a></li>
-                                                <li><a href="list.jsp">List</a></li>
-                                                <li><a href="product_detail.jsp">Product Detail</a></li>
-                                                <li><a href="cart.do?action=showCart&userId=${sessionScope.loginId}">Shopping Cart</a></li>
-                                                <li><a href="checkout.jsp"> Checkout</a></li>
-                                                <li><a href="wishlist.jsp">Wishlist</a></li>
-                                                <li><a href="dashboard.jsp">Dashboard</a></li>
-                                                <li><a href="register.jsp">Register</a></li>
-                                                <li><a href="about_us.jsp">About us</a></li>
-                                                <li class="with_sub_menu"><a href="blog.jsp">Blog</a>
-                                                    <div class="cat_submenuwrap1">
-                                                        <ul class="cat_submenu1">
-                                                            <li><a href="blog-detail.jsp">Blog Detail</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <li><a href="contact.jsp">Contact us</a></li>
-                                                <li><a href="404error.jsp">404 Error Page</a></li>
-                                                <li><a href="login.jsp">Login</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+<!--                                     <li><a class="nav_link" href="">Page</a> -->
+<!--                                         <div class="cat_submenuwrap"> -->
+<!--                                             <ul class="cat_submenu"> -->
+<!--                                                 <li><a href="category.jsp">Grid</a></li> -->
+<!--                                                 <li><a href="list.jsp">List</a></li> -->
+<!--                                                 <li><a href="product_detail.jsp">Product Detail</a></li> -->
+<%--                                                 <li><a href="cart.do?action=showCart&userId=${sessionScope.loginId}">Shopping Cart</a></li> --%>
+<!--                                                 <li><a href="checkout.jsp"> Checkout</a></li> -->
+<!--                                                 <li><a href="wishlist.jsp">Wishlist</a></li> -->
+<!--                                                 <li><a href="dashboard.jsp">Dashboard</a></li> -->
+<!--                                                 <li><a href="register.jsp">Register</a></li> -->
+<!--                                                 <li><a href="about_us.jsp">About us</a></li> -->
+<!--                                                 <li class="with_sub_menu"><a href="blog.jsp">Blog</a> -->
+<!--                                                     <div class="cat_submenuwrap1"> -->
+<!--                                                         <ul class="cat_submenu1"> -->
+<!--                                                             <li><a href="blog-detail.jsp">Blog Detail</a></li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                 </li> -->
+<!--                                                 <li><a href="contact.jsp">Contact us</a></li> -->
+<!--                                                 <li><a href="404error.jsp">404 Error Page</a></li> -->
+<!--                                                 <li><a href="login.jsp">Login</a></li> -->
+<!--                                             </ul> -->
+<!--                                         </div> -->
+<!--                                     </li> -->
                                     
                                     <li><a class="nav_link" href="">Account</a>
                                         <div class="cat_submenuwrap">
