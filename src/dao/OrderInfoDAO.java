@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.*;
 
 import vo.OrderInfoVO;
 
@@ -17,7 +18,7 @@ public class OrderInfoDAO {
 	public static OrderInfoDAO getInstance() {
 		return instance;
 	}
-
+	// hi
 	// order_pk int primary key not null auto_increment,
 	// order_id int not null,
 	// order_date datetime not null,
@@ -57,9 +58,47 @@ public class OrderInfoDAO {
 		}
 		return result;
 	}
-
+	
+	//DB selectList Method
+	public List<OrderInfoVO> selectList(int startRow, int endRow){
+		Connection con = null;
+		PreparedStatement pstmt= null;
+		ResultSet resultset = null;
+		List<OrderInfoVO> OrderInfoList = new ArrayList<>();
+		
+		try {
+			con = DBUtil.makeConnection();
+			String sql=
+			"SELECT * FROM order_info ORDER BY ORDER_ID DESC LIMIT ?,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			resultset = pstmt.executeQuery();
+			while(resultset.next()){
+				OrderInfoVO orderInfo = new OrderInfoVO();
+				orderInfo.setOrderPk(resultset.getInt(1));
+				orderInfo.setOrderId(resultset.getInt(2));
+				orderInfo.setOrderDate(resultset.getTimestamp(3));
+				orderInfo.setOrderAmount(resultset.getInt(4));
+				orderInfo.setOrderStatus(resultset.getString(5));
+				orderInfo.setProductId(resultset.getInt(6));
+				orderInfo.setId(resultset.getString(7));
+	
+				OrderInfoList.add(orderInfo);
+			}
+		} catch (SQLException e) {
+			System.out.println("selectList OrderInfo error");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(resultset);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);	
+		}
+		return OrderInfoList;
+	}
+	
 	// DB Select Method
-	public OrderInfoVO select(String userId, int OrderId) {
+	public OrderInfoVO select(String userId, int orderPk) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		ResultSet resultset = null;
@@ -68,11 +107,11 @@ public class OrderInfoDAO {
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
-					+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE USER_ID=? AND ORDER_ID=?";
+					+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE USER_ID=? AND ORDER_PK=?";
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setString(1, userId);
-			pstatement.setInt(2, OrderId);
+			pstatement.setInt(2, orderPk);
 			resultset = pstatement.executeQuery();
 			if (resultset.next()) {
 				result = new OrderInfoVO();
@@ -96,8 +135,8 @@ public class OrderInfoDAO {
 		return result;
 	}
 
-	//DB SelectByOrderPk Method
-		public OrderInfoVO selectByOrderPk(OrderInfoVO orderInfo){
+	//DB SelectByOrderId Method
+		public OrderInfoVO selectByOrderId(OrderInfoVO orderInfo){
 			Connection connection = null;
 			PreparedStatement pstatement = null;
 			ResultSet resultset = null;
@@ -105,10 +144,10 @@ public class OrderInfoDAO {
 			try {
 				connection = DBUtil.makeConnection();
 				String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
-						+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_PK = ?";
+						+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_ID = ?";
 				pstatement = connection.prepareStatement(sql);
 				
-				pstatement.setInt(1, orderInfo.getOrderPk());
+				pstatement.setInt(1, orderInfo.getOrderId());
 				resultset = pstatement.executeQuery();
 				
 				if (resultset.next()) {
@@ -123,7 +162,7 @@ public class OrderInfoDAO {
 				}
 
 			} catch (SQLException e) {
-				System.out.println("selectByOrderPk orderinfo error");
+				System.out.println("selectByOrderId orderinfo error");
 				e.printStackTrace();
 			} finally {
 				DBUtil.close(pstatement);
