@@ -20,6 +20,7 @@
 				<jsp:include page="include\header.jsp" />
                 
 			<!-- 메인 화면 중앙 부분 -->
+			
 			</header>
             <div class="clearfix"></div>
             <div class="content-wrapper">		
