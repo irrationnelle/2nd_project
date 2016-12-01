@@ -12,16 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import service.CartService;
+import service.MemberService;
 import service.ProductService;
 import vo.CartVO;
+import vo.MemberVO;
 import vo.ProductVO;
 
 @WebServlet("/cart.do")
 public class CartController extends HttpServlet{
-
-	private CartService service = CartService.getInstance();
-
-	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -40,15 +38,18 @@ public class CartController extends HttpServlet{
 		
 		String action = request.getParameter("action");
 		String viewPath = "";
-		String userId = null;
+		HttpSession session = request.getSession();
+		String userId = (String)session.getAttribute("loginId");
+		
+		CartService cService = CartService.getInstance();
+		MemberService mService = MemberService.getInstance();
+		
+		List<CartVO> cartList = null;
 		
 		switch (action) {
 		case "addcart":
 			String productIdStr = request.getParameter("productId");
 			String cartAmountStr = request.getParameter("amount");
-			HttpSession session = request.getSession();
-			userId = (String)session.getAttribute("loginId");
-//			userId = "rase";
 			int productId = -1;
 			int cartAmount = -1;
 			int result = -1;
@@ -60,17 +61,14 @@ public class CartController extends HttpServlet{
 			if(cartAmountStr != null && cartAmountStr .length()>=0) {
 				cartAmount = Integer.parseInt(cartAmountStr);
 			}
-			
-			CartVO cart = new CartVO(); 
 					
-			result = service.insertCart(userId, productId, cartAmount);
+			result = cService.insertCart(userId, productId, cartAmount);
+			System.out.println("장바구니 추가 결과: " + result);
 			viewPath = "cart.do?action=showCart&userId="+userId;
-//			viewPath = "category.jsp";
 			break;
 			
 		case "showCart":
-			userId = request.getParameter("userId");
-			List<CartVO> cartList = service.showCartList(userId);
+			cartList = cService.showCartList(userId);
 			request.setAttribute("cartList", cartList);
 			viewPath = "shopping_cart.jsp";
 			break;
@@ -97,6 +95,14 @@ public class CartController extends HttpServlet{
 			//int updateCart = service.updateCart(updateCart);
 			viewPath = "cart.do?action=showCart";
 			break;
+			
+		case "passCart":
+			cartList = cService.showCartList(userId);
+			request.setAttribute("cartList", cartList);
+			
+			MemberVO member = mService.showMember(userId);
+			request.setAttribute("member", member);
+			viewPath = "checkout.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);

@@ -25,6 +25,11 @@ public class MemberService {
 			}
 		}
 	}
+	
+	public MemberVO showMember(String id) {
+		MemberVO member = dao.select(id);
+		return member;
+	}
 
 	public boolean login(String id, String password){
 		MemberVO savedMember = dao.select(id);

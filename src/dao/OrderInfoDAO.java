@@ -18,7 +18,6 @@ public class OrderInfoDAO {
 	public static OrderInfoDAO getInstance() {
 		return instance;
 	}
-	// hi
 	// order_pk int primary key not null auto_increment,
 	// order_id int not null,
 	// order_date datetime not null,
@@ -36,17 +35,15 @@ public class OrderInfoDAO {
 
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "INSERT INTO order_info (ORDER_PK," + "ORDER_ID," + "ORDER_DATE," + "ORDER_AMOUNT,"
-					+ "ORDER_STATUS," + "USER_ID" + "PRODUCT_ID) VALUES" + "" + "(?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO order_info (ORDER_ID," + "ORDER_DATE," + "ORDER_AMOUNT,"
+					+ "ORDER_STATUS," + "USER_ID," + "PRODUCT_ID) VALUES" + "" + "(?,now(),?,?,?,?)";
 
 			pstatement = connection.prepareStatement(sql);
-			pstatement.setInt(1, orderInfo.getOrderPk());
-			pstatement.setInt(2, orderInfo.getOrderId());
-			pstatement.setTimestamp(3, orderInfo.getOrderDate());
-			pstatement.setInt(4, orderInfo.getOrderAmount());
-			pstatement.setString(5, orderInfo.getOrderStatus());
-			pstatement.setString(6, orderInfo.getId());
-			pstatement.setInt(7, orderInfo.getProductId());
+			pstatement.setInt(1, orderInfo.getOrderId());
+			pstatement.setInt(2, orderInfo.getOrderAmount());
+			pstatement.setString(3, orderInfo.getOrderStatus());
+			pstatement.setString(4, orderInfo.getId());
+			pstatement.setInt(5, orderInfo.getProductId());
 
 			return pstatement.executeUpdate();
 		} catch (SQLException e) {

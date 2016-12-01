@@ -23,6 +23,8 @@ public class CartService {
 		ProductVO product = productdao.select(productId);
 		int productStock = product.getProductStock();
 		
+		// 겹치는 productId가 존재할 경우, insert가 아니라 update 처리.
+		
 		if(userId != null && productId > 0 && cartAmount > 0 && productStock >= cartAmount) {
 			CartVO cart = new CartVO();
 			cart.setCartId(cartCount);

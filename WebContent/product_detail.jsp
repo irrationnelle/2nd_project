@@ -46,7 +46,7 @@
                             <div class="product_bill_info">
                                 <div class="product_name">
                                     <h2>${requestScope.productDetail.productName}</h2>
-                                    <span id="ProductPrice" class="product-single__price">${requestScope.productDetail.productPrice}</span>
+                                    <span id="ProductPrice" class="product-single__price">₩ ${requestScope.productDetail.productPrice}</span>
                                 </div>
                                 <div class="product-single__description rte" id="productDescription">
                                     <div class="short-description">${requestScope.productDetail.productDetail}</div>                    

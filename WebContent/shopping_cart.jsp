@@ -31,7 +31,7 @@
                         <div class="page_bottom">
                             <a class="shop_more" href="category.jsp"><i class="fa fa-chevron-left"></i> Shop More </a>
                             <span>Your bag contains 2 items and comes to a total of $64.00</span>
-                            <button type="button" title="Proceed to Checkout" class="button btn-buy-now"><span>Proceed to Checkout</span></button>
+                            <button type="button" title="Proceed to Checkout" class="button btn-buy-now" onclick="location.href='cart.do?action=passCart'"><span>결제하러 가기</span></button>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                         	<c:forEach var="items" items="${requestScope.cartList}">
 	                                            <tr class="first odd">
 	                                                <td class="shopping-table-image">
-	                                                    <a class="product-image" title="${items.productName}" href=""><img alt="Women's Crepe Printed Black" src="${items.productImage}"></a>
+	                                                    <a class="product-image" title="${items.productName}" href=""><img alt="${items.productName}" src="${items.productImage}"></a>
 	                                                </td>
 	                                                <td><h2 class="product-name"><a href="">${items.productName}</a></h2></td>
 	                                                <td class="a-right shopping-table-title-product">
@@ -75,7 +75,7 @@
 	                                                </td>
 	                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${items.cartAmount}" name="cart[15945][qty]"></div></td>
 	                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">${items.productPrice}</span></span></div></td>
-<!-- 	                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td> -->
+	                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
 	                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
 	                                            </tr>
                                         	</c:forEach>
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 title_bottom">
-                                        <button type="button" title="Proceed to Checkout" class="button btn-buy-now"><span>Proceed to Checkout</span></button>
+                                        <button type="button" title="Proceed to Checkout" class="button btn-buy-now" onclick="location.href='cart.do?action=passCart'"><span>결제하러 가기</span></button>
                                     </div>
                                 </fieldset>
                             </form>

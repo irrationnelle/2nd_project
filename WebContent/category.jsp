@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="price-box">
-                                        <p class="special-price"><span class="price">${item.productPrice}</span></p>                        
+                                        <p class="special-price"><span class="price">₩ ${item.productPrice}</span></p>                        
                                     </div>
                                 </div>
                             </div>
