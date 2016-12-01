@@ -31,8 +31,8 @@ public class CartService {
 	
 	
 	
-	public List<CartVO> showCartList(String clickAddCart) {
-		
+	public List<CartVO> showCartList(String userId) {
+		List<CartVO> list = cartdao.selectList(userId);
 	}
 	
 	

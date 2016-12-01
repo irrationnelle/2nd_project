@@ -40,26 +40,35 @@ public class CartController extends HttpServlet{
 		String viewPath = "";
 		
 		switch (action) {
-		
 		case "addcart":
-			int cartCount = 10000;
-			String clickAddCartStr = request.getParameter("addCart");
+//			int cartCount = 10000;
+			String productIdStr = request.getParameter("productId");
+			String cartAmountStr = request.getParameter("amount");
+			String userId = request.getParameter("userId");
 			
-			if(clickAddCartStr != null && clickAddCartStr.length()>=0) {
-				int clickAddCart = Integer.parseInt(clickAddCartStr);
+			int productId = -1;
+			int cartAmount = -1;
+			
+			if(productIdStr != null && productIdStr.length()>=0) {
+				productId = Integer.parseInt(productIdStr);
 			}
-			CartVO cart = new CartVO(); 
-			cart.setCartId(cartCount);
-			cart.setCartAmount(request.getParameter("amount"));
-			cart.getProductId()
 			
+			if(cartAmountStr != null && cartAmountStr .length()>=0) {
+				cartAmount = Integer.parseInt(cartAmountStr);
+			}
+			
+			CartVO cart = new CartVO(); 
+//			cart.setCartId(cartCount);
+			cart.setCartAmount(cartAmount);
+			cart.setProductId(productId);
+			cart.setUserId(userId);
 			
 		//	int insertCart = service.insertCart(clickAddCart);
-			//List<CartVO> cartList = service.showCartList(clickAddCart);
+			List<CartVO> cartList = service.showCartList(clickAddCart);
 			
-			//request.setAttribute("cartList", cartList);
-			//viewPath = "cartList.jsp";
-			//break;
+			request.setAttribute("cartList", cartList);
+			viewPath = "cartList.jsp";
+			break;
 		
 		case "clearCart":
 			String clearCartStr = request.getParameter("clearCart");

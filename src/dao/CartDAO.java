@@ -87,7 +87,7 @@ public class CartDAO {
 	}
 
 	//DB selectList Method
-	public List<CartVO> selectList(int startRow, int endRow) {
+	public List<CartVO> selectList(String userId) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet resultset = null;
@@ -95,10 +95,9 @@ public class CartDAO {
 
 		try {
 			con = DBUtil.makeConnection();
-			String sql = "SELECT * FROM cart ORDER BY CART_ID DESC LIMIT ?,?";
+			String sql = "SELECT * FROM cart ORDER BY CART_ID WHERE user_id=?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
+			pstmt.setString(1, userId);
 			resultset = pstmt.executeQuery();
 			while (resultset.next()) {
 				CartVO cart = new CartVO();
