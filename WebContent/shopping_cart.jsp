@@ -24,8 +24,8 @@
                 <div class="container padd_none">
                     <div class="page_title">
                         <div class="page_top">
-                            <h1>SHOPPING CART</h1>
-                            <span>Free Shipping on pre-paid orders</span>
+                            <h1>장바구니 보기</h1>
+                            <span>배송은 인쇄가능한 티켓을 이메일로 보내드려요!</span>
                         </div>
                         
                         <div class="page_bottom">
@@ -75,7 +75,7 @@
 	                                                </td>
 	                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="${items.cartAmount}" name="cart[15945][qty]"></div></td>
 	                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">${items.productPrice}</span></span></div></td>
-	                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
+<!-- 	                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td> -->
 	                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
 	                                            </tr>
                                         	</c:forEach>
@@ -83,7 +83,7 @@
                                     </table>
                                     <div class="grand_total">
                                         <div class="col-lg-8 col-md-7 col-sm-6 col-xs-7 padd_lnone">
-                                            <button class="button btn_update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit">Update Cart</button>
+                                            <button class="button btn_update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit" onclick="location.href='cart.do?action=changeCart&각 상품의 수량정보'">Update Cart</button>
                                             <button  class="button btn_empty" id="empty_cart_button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit">Clear Cart</button>
                                         </div>
                                         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-5">

@@ -7,7 +7,7 @@
                     <div class="box-content box-category">
                         <ul id="magicat">
                            
-                            <li class="level1- level1"> <span class="magicat-cat"><a href="category.jsp"><span>SHOP</span></a></span> </li>
+                            <li class="level1- level1"> <span class="magicat-cat"><a href="product.do?action=category"><span>SHOP</span></a></span> </li>
                             <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span>MEN</span></a></span> 
 							<ul>
 								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> SHIRT</span></a></span> </li>
@@ -59,9 +59,6 @@
                                     <li class="last level2- level2"> <span class="magicat-cat"><a href="register.jsp"><span>REGISTER</span></a></span> </li>
                                     <li class="last level2- level2"> <span class="magicat-cat"><a href="about_us.jsp"><span>ABOUT US</span></a></span> </li>
 								 <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="blog.jsp"><span>BLOG</span></a></span>
-                                <ul>
-									<li class="last level2- level2"> <span class="magicat-cat"><a href="blog-detail.jsp"><span> BLOG DETAIL</span></a></span> </li>
-                                </ul>
 								</li>
 								<li class="last level2- level2"> <span class="magicat-cat"><a href="contact.jsp"><span>CONTACT US</span></a></span> </li>
                                     <li class="last level2- level2"> <span class="magicat-cat"><a href="404error.jsp"><span>404 ERROR</span></a></span> </li>
@@ -69,7 +66,6 @@
 								</ul>
                             </li> 
                             <li class="level1- level1"> <span class="magicat-cat"><a href="contact.jsp"><span>CONTACT US </span></a></span></li> 
-                            <li class="level1- level1"> <span class="magicat-cat"><a href="blog.jsp"><span>BLOG </span></a></span></li> 
                             <li class="level1- level1"> <span class="magicat-cat"><a href="login.jsp"><span>LOGIN</span></a></span></li>                    
                         </ul>
                     </div>

@@ -63,7 +63,8 @@ public class CartDAO {
 
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "SELECT CART_PK CART_AMOUNT, PRODUCT_ID FROM cart WHERE CART_ID = ? AND USER_ID = ?";
+//			String sql = "SELECT CART_PK CART_AMOUNT, PRODUCT_ID FROM cart WHERE CART_ID = ? AND USER_ID = ?";
+			String sql = "SELECT cart_pk, cart_id, cart_amount, user_id, cart.product_id, product_name, product_price, product_image FROM cart LEFT JOIN product ON cart.product_id = product.product_id WHERE cart_id = ? AND user_id = ?";
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setInt(1, cartId);
@@ -74,6 +75,11 @@ public class CartDAO {
 				result.setCartPk(resultset.getInt(1));
 				result.setCartId(resultset.getInt(2));
 				result.setCartAmount(resultset.getInt(3));
+				result.setUserId(resultset.getString(4));
+				result.setProductId(resultset.getInt(5));
+				result.setProductName(resultset.getString(6));
+				result.setProductPrice(resultset.getInt(7));
+				result.setProductImage(resultset.getString(8));
 			}
 		} catch (SQLException e) {
 			System.out.println("Select Cart ¿¡·¯");
@@ -95,7 +101,8 @@ public class CartDAO {
 
 		try {
 			con = DBUtil.makeConnection();
-			String sql = "SELECT * FROM cart ORDER BY CART_ID WHERE user_id=?";
+//			String sql = "SELECT * FROM cart ORDER BY CART_ID WHERE user_id=?";
+			String sql = "SELECT cart_pk, cart_id, cart_amount, user_id, cart.product_id, product_name, product_price, product_image FROM cart LEFT JOIN product ON cart.product_id = product.product_id WHERE user_id=? ORDER BY cart_id DESC";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userId);
 			resultset = pstmt.executeQuery();
@@ -106,6 +113,9 @@ public class CartDAO {
 				cart.setCartAmount(resultset.getInt(3));
 				cart.setUserId(resultset.getString(4));
 				cart.setProductId(resultset.getInt(5));
+				cart.setProductName(resultset.getString(6));
+				cart.setProductPrice(resultset.getInt(7));
+				cart.setProductImage(resultset.getString(8));
 
 				cartList.add(cart);
 			}

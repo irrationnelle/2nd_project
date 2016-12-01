@@ -6,9 +6,11 @@ public class DBUtil {
 	
 	//데이터베이스 정보 입력
 	private static String DRIVER_NAME = "org.mariadb.jdbc.Driver";
-	private static String DB_URL = "jdbc:mariadb://70.12.109.114:3306/project";
+//	private static String DB_URL = "jdbc:mariadb://70.12.109.114:3306/project";
+	private static String DB_URL = "jdbc:mariadb://localhost:3306/project";
 	private static String DB_ID = "root";
-	private static String DB_PW = "sds902";
+//	private static String DB_PW = "sds902";
+	private static String DB_PW = "voodoo00";
 	
 	
 	//DB와 연결하는 Method

@@ -3,11 +3,13 @@ package servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import service.CartService;
 import service.ProductService;
@@ -44,8 +46,9 @@ public class CartController extends HttpServlet{
 		case "addcart":
 			String productIdStr = request.getParameter("productId");
 			String cartAmountStr = request.getParameter("amount");
-			
-			userId = request.getParameter("userId");
+			HttpSession session = request.getSession();
+			userId = (String)session.getAttribute("loginId");
+//			userId = "rase";
 			int productId = -1;
 			int cartAmount = -1;
 			int result = -1;
@@ -61,14 +64,15 @@ public class CartController extends HttpServlet{
 			CartVO cart = new CartVO(); 
 					
 			result = service.insertCart(userId, productId, cartAmount);
-			viewPath = "cart.do?action=showCart&userId=" + userId;
+			viewPath = "cart.do?action=showCart&userId="+userId;
+//			viewPath = "category.jsp";
 			break;
 			
 		case "showCart":
 			userId = request.getParameter("userId");
 			List<CartVO> cartList = service.showCartList(userId);
 			request.setAttribute("cartList", cartList);
-			viewPath = "cartList.jsp";
+			viewPath = "shopping_cart.jsp";
 			break;
 		
 		case "clearCart":
@@ -80,7 +84,7 @@ public class CartController extends HttpServlet{
 			
 			//int clearCart = service.deleteCart(clearCart);
 		
-			viewPath = "cart.do?action=cart";
+			viewPath = "cart.do?action=showCart";
 			break;
 			
 		case "changeCart":
@@ -91,8 +95,11 @@ public class CartController extends HttpServlet{
 			}
 			
 			//int updateCart = service.updateCart(updateCart);
-			viewPath = "cart.do?action=cart";
+			viewPath = "cart.do?action=showCart";
 			break;
 		}
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+		dispatcher.forward(request, response);
 	}
 }

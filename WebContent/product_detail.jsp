@@ -56,12 +56,12 @@
 												${requestScope.productDetail.productDetailEX}
                                             </span>
                                         </p>
-                                        <ul class="long_dis_list">
-                                            <li>Fitted Style </li>
-                                            <li>100% cotton  </li>
-                                            <li>Delicate Wash Cold   </li>
-                                            <li>Model is 5'10 wearing a size S </li>
-                                        </ul>
+<!--                                         <ul class="long_dis_list"> -->
+<!--                                             <li>Fitted Style </li> -->
+<!--                                             <li>100% cotton  </li> -->
+<!--                                             <li>Delicate Wash Cold   </li> -->
+<!--                                             <li>Model is 5'10 wearing a size S </li> -->
+<!--                                         </ul> -->
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -89,7 +89,7 @@
                                 </label>
                             </div>
                             <div class="col-lg-12 button_margin">
-                                <button id="AddToCart" class="btn btn--expand btn--ghost" name="add" type="submit"> <span id="AddToCartText">Add to Cart</span> </button>
+                                <button id="AddToCart" class="btn btn--expand btn--ghost" name="add" type="submit" onclick="location.href='cart.do?action=addcart&amount=1&productId=${requestScope.productDetail.productId}'";><span id="AddToCartText">Add to Cart</span></button>
                             </div>
                         </div>
                     </div>

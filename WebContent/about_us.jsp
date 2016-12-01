@@ -34,38 +34,71 @@
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 	<div class="dashboard">
                         <div class="description">
-                        	<p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
-                            	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis 
-                                justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus 
-                                feugiat sem, quis fermentum turpis eros eget velit.
-                            </p>
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet 
-                                urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.
-                            </p>
-                            <p>
-                                Dummy is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis 
-                                justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus 
-                                feugiat sem, quis fermentum turpis eros eget velit.
-                            </p>
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet 
-                                urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.
-                            </p>
-                            <p>
-                                Dummy is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 
-                                the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic 
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
+
+<p>
+빛 그리운 빛
+<p>
+변하는 것을 매우 슬프게 바라본다
+<p>
+그 불기둥은 비틀리고 비틀어져
+<p>
+석양의 색을 버린다
+
+<p>
+해야 할 일을 하며
+<p>
+간을 도리어 몸을 젖혀서
+<p>
+미아의 허물을 내걸고 웃는다
+
+<p>
+무섭도록 검게 퍼져가며
+<p>
+갈 곳 없이 모이는 인연에
+<p>
+무엇을 묻고 무엇을 전하며 나는 가는가
+
+
+<p>
+너희들에게는 보이는가
+<p>
+저 하늘길 너머에 존재하는
+<p>
+질투심의 업화에 태워진 손을
+<p>
+흩어진 희망을 떨어트리고는 주워서
+<p>
+곁눈질도 하지 않고 속 안을 서로 핥는 모습을
+
+<p>
+자 반짝임이야
+<p>
+엿보았던 그 옛날의
+<p>
+시대는 지켜봐주지 않고
+<p>
+사라지지 않고 남는 별 하나를 버린다
+
+<p>
+누군가 가르쳐줘
+<p>
+행복은 어디에 있는지
+<p>
+후광이 부수는 것처럼
+<p>
+하늘이 갈라져있다
+
+<p>
+사람을 생각한다는 말을 밟고서
+<p>
+별이 헤엄쳐 가는 그 너머로
+
+
+<p>
+행복하기를
+
+
+
                         </div>
                     </div>
                 </div>

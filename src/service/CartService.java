@@ -8,7 +8,7 @@ import vo.CartVO;
 import vo.ProductVO;
 
 public class CartService {
-	static private int cartCount = 10000;
+	private int cartCount = 10000;
 	private ProductDAO productdao = ProductDAO.getInstance();
 	private CartDAO cartdao = CartDAO.getInstance();
 	private static CartService instance = new CartService();

@@ -31,7 +31,7 @@
                         <div class="col-lg-6 col-md-7 col-sm-7 col-xs-6">
                             <div class="cat_menu">
                                 <ul>                        
-                                    <li><a class="nav_link" href="category.jsp">Shop</a></li>
+                                    <li><a class="nav_link" href="product.do?action=category">Shop</a></li>
                                     <li><a class="nav_link" href="category.jsp">Men</a>
                                         <div class="cat_submenuwrap">
                                             <div class="cat_submenu m_semi_full">
@@ -115,7 +115,7 @@
                                                 <li><a href="category.jsp">Grid</a></li>
                                                 <li><a href="list.jsp">List</a></li>
                                                 <li><a href="product_detail.jsp">Product Detail</a></li>
-                                                <li><a href="shopping_cart.jsp">Shopping Cart</a></li>
+                                                <li><a href="cart.do?action=showCart&userId=${sessionScope.loginId}">Shopping Cart</a></li>
                                                 <li><a href="checkout.jsp"> Checkout</a></li>
                                                 <li><a href="wishlist.jsp">Wishlist</a></li>
                                                 <li><a href="dashboard.jsp">Dashboard</a></li>
