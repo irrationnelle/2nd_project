@@ -62,18 +62,17 @@ public class ProductService {
 		ProductVO product = dao.select(productId);
 		OrderInfoVO order= orderdao.select(userId, orderId);
 		
-		
 		try{
 		
-		int OrderPk = order.getOrderPk();
-		int OrderAmount = order.getOrderAmount();
-		int productStock = product.getProductStock();
-		
-		product.setProductStock(productStock-OrderAmount);
-		dao.update(product);
-		} catch (Exception e){
-			System.out.println("sChange Stock Error");
-		}
+			int OrderPk = order.getOrderPk();
+			int OrderAmount = order.getOrderAmount();
+			int productStock = product.getProductStock();
+			
+			product.setProductStock(productStock-OrderAmount);
+			dao.update(product);
+			} catch (Exception e){
+				System.out.println("sChange Stock Error");
+			}
 		return new ProductVO();
 	}
 	
