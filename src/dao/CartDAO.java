@@ -1,9 +1,11 @@
 package dao;
 
 import java.sql.Connection;
+import java.util.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import vo.CartVO;
 
@@ -51,23 +53,23 @@ public class CartDAO {
 		}
 		return result;
 	}
-	
-	//DB Select Method
-	public CartVO select(int cartId, String userId){
+
+	// DB Select Method
+	public CartVO select(int cartId, String userId) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		ResultSet resultset = null;
 		CartVO result = null;
-		
+
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "SELECT CART_PK CART_AMOUNT, PRODUCT_ID FROM cart WHERE CART_ID = ? AND USER_ID = ?";
 			pstatement = connection.prepareStatement(sql);
-			
+
 			pstatement.setInt(1, cartId);
 			pstatement.setString(2, userId);
 			resultset = pstatement.executeQuery();
-			if(resultset.next()){
+			if (resultset.next()) {
 				result = new CartVO();
 				result.setCartPk(resultset.getInt(1));
 				result.setCartId(resultset.getInt(2));
@@ -84,12 +86,47 @@ public class CartDAO {
 		return result;
 	}
 
-	//DB Update Method
-	public void update (CartVO cart){
+	//DB selectList Method
+	public List<CartVO> selectList(int startRow, int endRow) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet resultset = null;
+		List<CartVO> cartList = new ArrayList<>();
+
+		try {
+			con = DBUtil.makeConnection();
+			String sql = "SELECT * FROM cart ORDER BY CART_ID DESC LIMIT ?,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			resultset = pstmt.executeQuery();
+			while (resultset.next()) {
+				CartVO cart = new CartVO();
+				cart.setCartPk(resultset.getInt(1));
+				cart.setCartId(resultset.getInt(2));
+				cart.setCartAmount(resultset.getInt(3));
+				cart.setUserId(resultset.getString(4));
+				cart.setProductId(resultset.getInt(5));
+
+				cartList.add(cart);
+			}
+		} catch (SQLException e) {
+			System.out.println("selectList OrderInfo error");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(resultset);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);
+		}
+		return cartList;
+	}
+
+	// DB Update Method
+	public void update(CartVO cart) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		int result = 0;
-		
+
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "UPDATE cart SET CART_ID=? CART_AMOUNT=? WHERE CART_PK=? AND USER_ID AND PRODUCT_ID=?";
@@ -99,7 +136,7 @@ public class CartDAO {
 			pstatement.setInt(3, cart.getCartPk());
 			pstatement.setString(4, cart.getUserId());
 			pstatement.setInt(5, cart.getProductId());
-			
+
 			result = pstatement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("update cart error");
@@ -110,11 +147,11 @@ public class CartDAO {
 		}
 	}
 
-	//DB Delete Method
-	public void delete (CartVO cart){
+	// DB Delete Method
+	public void delete(CartVO cart) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
-		
+
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "DELETE FROM cart WHERE CART_PK = ? AND USER_ID = ?";
@@ -122,8 +159,7 @@ public class CartDAO {
 			pstatement.setInt(1, cart.getCartPk());
 			pstatement.setString(2, cart.getUserId());
 			pstatement.executeQuery();
-			
-			
+
 		} catch (SQLException e) {
 			System.out.println("delete cart error");
 			e.printStackTrace();

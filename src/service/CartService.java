@@ -1,7 +1,8 @@
 package service;
 
-import java.util.List;
 
+import dao.CartDAO;
+import java.util.List;
 import vo.CartVO;
 
 public class CartService {
@@ -29,8 +30,7 @@ public class CartService {
 	}
 	
 	public List<CartVO> passCartList(String userId) {
-		List<CartVO> list = dao.selectList(userID
-				
+		List<CartVO> list = dao.selectList(userID);
 				
 	}
 }
