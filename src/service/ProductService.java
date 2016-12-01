@@ -58,12 +58,12 @@ public class ProductService {
 	}
 	
 	
-	public ProductVO changeStock(int productId, String userId, int orderId) {
+	public ProductVO changeStock(int productId, String userId, int orderPk) {
 		ProductVO product = dao.select(productId);
-		OrderInfoVO order= orderdao.select(userId, orderId);
+		OrderInfoVO order= orderdao.selectByOrderPk(order);
 		
 		try{
-		
+			
 			int OrderPk = order.getOrderPk();
 			int OrderAmount = order.getOrderAmount();
 			int productStock = product.getProductStock();
