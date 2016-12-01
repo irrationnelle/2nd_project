@@ -186,13 +186,10 @@
                     </div>
             
                     
-            
-            
-            
-                      
+              
             <div class="call-to-action call-to-action--final">
             	
-              <input type="submit" data-submit-payment="true" class="btn btn--primary" value="주문 완료" name="complete">
+              <input type="button" data-submit-payment="true" class="btn btn--primary" value="주문 완료" name="complete" onclick="location.href='order.do?action=orderCart'">
             </div>
             
             
@@ -207,7 +204,7 @@
                       
             <div class="call-to-action call-to-action--final">
             
-              <input type="submit" data-submit-payment="true" class="btn btn--primary" value="Complete order" name="complete" disabled="">
+              <input type="submit" data-submit-payment="true" class="btn btn--primary" value="주문 완료2" name="complete" disabled="">
             </div>
             
             
@@ -222,7 +219,7 @@
                       
             <div class="call-to-action call-to-action--final">
             
-              <input type="submit" data-submit-payment="true" class="btn btn--primary" value="Complete order" name="complete" disabled="">
+              <input type="submit" data-submit-payment="true" class="btn btn--primary" value="주문 완료3" name="complete" disabled="">
             </div>
             
             
@@ -244,7 +241,7 @@
           </div>
         
         <!-- 반복문 시작 -->
-        <c:forEach var="items" items="${requestScope.cartList}">
+        <c:forEach var="items" items="${requestScope.cartPage.cartList}">
         
 	          <div class="summary-body">
 	            <div class="order-summary__section order-summary__section--product-list ">
@@ -289,7 +286,7 @@
                 <span class="total-line__name">
                   	티켓 금액
                 </span>
-                <strong data-checkout-subtotal-price-target="95000" class="total-line__price">₩950.00</strong>
+                <strong data-checkout-subtotal-price-target="95000" class="total-line__price">₩ ${requestScope.cartPage.totalPrice}</strong>
               </div>
               <div class="total-line total-line--shipping">
                 <span class="total-line__name">
@@ -307,7 +304,7 @@
                 <span class="total-line__name">
                   	총액
                 </span>
-                <strong data-checkout-total-price-target="95000" class="total-line__price">₩950.00</strong>
+                <strong data-checkout-total-price-target="95000" class="total-line__price">₩ ${requestScope.cartPage.totalPrice}</strong>
               </div>
             </div>
         
@@ -317,7 +314,7 @@
                     	납부 기한
                 </span>
                 <div class="payment-due">
-                  <div data-checkout-payment-due-target="95000" class="payment-due__price">₩950.00</div>
+                  <div data-checkout-payment-due-target="95000" class="payment-due__price">₩ ${requestScope.cartPage.totalPrice}</div>
                   <div class="payment-due__currency">KRW</div>
                 </div>
               </div>

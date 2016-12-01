@@ -38,33 +38,29 @@ public class OrderInfoController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String userId = (String)session.getAttribute("loginId");
+		
+		List<CartVO> cartList = null;
+		int orderId = -1;
+		
+		int result = -1;
 
 		switch (action) {
 		case "checkout":
 			System.out.println("in checkout");
-			List<CartVO> cartList = (List<CartVO>)request.getAttribute("cartList");
-			
-
+			cartList = (List<CartVO>)request.getAttribute("cartList");
 			oService.insertOrderInfo(cartList);
 			viewPath="product.do?action=category";
 			break;
 			
 		case "orderCart":
-			System.out.println("in orderCart");
 			cartList = cService.showCartList(userId);
+			orderId = oService.insertOrderInfo(cartList);
 			
-			oService.insertOrderInfo(cartList);
-			viewPath="product.do?action=category";
+			List<OrderInfoVO> orderInfoList = oService.showOrderInfoList(userId);
+			request.setAttribute("orderInfoList", orderInfoList);
+			result = cService.clearCart(userId);
+			viewPath="dashboard.jsp";
 			break;
-
-//		case "showOrderInfo":
-//			String showOrderInfoIdStr = request.getParameter("orderInfoId");
-//
-//			if (showOrderInfoIdStr != null && showOrderInfoIdStr.length() >= 0) {
-//				int showOrderInfoId = Integer.parseInt(showOrderInfoIdStr);
-//			}
-//			
-//			List<OrderInfoVO> orderInfo = service.selectOrderInfo(showOrderInfoId);
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);

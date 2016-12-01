@@ -15,7 +15,7 @@ public class OrderInfoService {
 	
 	public static int orderId = 100000;
 
-	public void insertOrderInfo(List<CartVO> cartList) {
+	public int insertOrderInfo(List<CartVO> cartList) {
 		for(CartVO cart : cartList) {
 			OrderInfoVO orderInfo = new OrderInfoVO();
 			orderInfo.setOrderId(orderId);
@@ -28,5 +28,11 @@ public class OrderInfoService {
 			orderInfoDao.insert(orderInfo);
 		}
 		orderId++;
+		return (orderId-1);
+	}
+	
+	public List<OrderInfoVO> showOrderInfoList(String userId) {
+		List<OrderInfoVO> orderInfoList = orderInfoDao.selectList(userId);
+		return orderInfoList;
 	}
 }

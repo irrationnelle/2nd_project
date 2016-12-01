@@ -57,7 +57,7 @@ public class OrderInfoDAO {
 	}
 	
 	//DB selectList Method
-	public List<OrderInfoVO> selectList(int startRow, int endRow){
+	public List<OrderInfoVO> selectList(String userId){
 		Connection con = null;
 		PreparedStatement pstmt= null;
 		ResultSet resultset = null;
@@ -66,10 +66,9 @@ public class OrderInfoDAO {
 		try {
 			con = DBUtil.makeConnection();
 			String sql=
-			"SELECT * FROM order_info ORDER BY ORDER_ID DESC LIMIT ?,?";
+			"SELECT * FROM order_info WHERE user_id=? ORDER BY ORDER_ID DESC";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
+			pstmt.setString(1, userId);
 			resultset = pstmt.executeQuery();
 			while(resultset.next()){
 				OrderInfoVO orderInfo = new OrderInfoVO();
@@ -78,8 +77,8 @@ public class OrderInfoDAO {
 				orderInfo.setOrderDate(resultset.getTimestamp(3));
 				orderInfo.setOrderAmount(resultset.getInt(4));
 				orderInfo.setOrderStatus(resultset.getString(5));
-				orderInfo.setProductId(resultset.getInt(6));
-				orderInfo.setId(resultset.getString(7));
+				orderInfo.setId(resultset.getString(6));
+				orderInfo.setProductId(resultset.getInt(7));
 	
 				OrderInfoList.add(orderInfo);
 			}

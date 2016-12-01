@@ -178,4 +178,27 @@ public class CartDAO {
 		
 		return result;
 	}
+	
+	public int clear(String userId) {
+		Connection connection = null;
+		PreparedStatement pstatement = null;
+		int result = 0;
+
+		try {
+			connection = DBUtil.makeConnection();
+			String sql = "DELETE FROM cart WHERE USER_ID = ?";
+			pstatement = connection.prepareStatement(sql);
+			pstatement.setString(1, userId);
+			
+			result = pstatement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("clear cart error");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(pstatement);
+			DBUtil.close(connection);
+		}
+		
+		return result;
+	}
 }

@@ -25,12 +25,12 @@
                     <div class="page_title">
                         <div class="page_top">
                             <h1>장바구니 보기</h1>
-                            <span>배송은 인쇄가능한 티켓을 이메일로 보내드려요!</span>
+                            <span>티켓은 이메일로 배송해드려요!</span>
                         </div>
                         
                         <div class="page_bottom">
-                            <a class="shop_more" href="category.jsp"><i class="fa fa-chevron-left"></i> Shop More </a>
-                            <span>Your bag contains 2 items and comes to a total of $64.00</span>
+                            <a class="shop_more" href="product.do?action=category"><i class="fa fa-chevron-left"></i> 이어서 쇼핑하기 </a>
+                            <span>장바구니에 총  ${requestScope.cartPage.sortCount} 개의 물품이 있으며 , 총액은 ${requestScope.cartPage.totalPrice}원입니다.</span>
                             <button type="button" title="Proceed to Checkout" class="button btn-buy-now" onclick="location.href='cart.do?action=passCart'"><span>결제하러 가기</span></button>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                         </thead>
                                         <tbody>
                                         <!-- 반복문이 시작되는 곳 -->
-                                        	<c:forEach var="items" items="${requestScope.cartList}">
+                                        	<c:forEach var="items" items="${requestScope.cartPage.cartList}">
 	                                            <tr class="first odd">
 	                                                <td class="shopping-table-image">
 	                                                    <a class="product-image" title="${items.productName}" href=""><img alt="${items.productName}" src="${items.productImage}"></a>
@@ -79,18 +79,19 @@
 	                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
 	                                            </tr>
                                         	</c:forEach>
+                                        	<!-- 반복문 종료 -->
                                         </tbody>
                                     </table>
                                     <div class="grand_total">
                                         <div class="col-lg-8 col-md-7 col-sm-6 col-xs-7 padd_lnone">
-                                            <button class="button btn_update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit" onclick="location.href='cart.do?action=changeCart&각 상품의 수량정보'">Update Cart</button>
-                                            <button  class="button btn_empty" id="empty_cart_button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit">Clear Cart</button>
+                                            <button class="button btn_update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit" onclick="location.href='cart.do?action=changeCart&각 상품의 수량정보'">장바구니 갱신하기</button>
+                                            <button  class="button btn_empty" id="empty_cart_button" title="Clear Cart" value="empty_cart" name="update_cart_action" type="button" onclick="location.href='cart.do?action=clearCart'">장바구니 비우기</button>
                                         </div>
                                         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-5">
                                             <table id="tbl_cart_grand_tot" class="table-responsive data-table cart-table grand_tbl">
                                                 <tr>
                                                     <td class="label_td"><span>Total</span></td>
-                                                    <td><span class="price">$587.00</span></td>
+                                                    <td><span class="price">${requestScope.cartPage.totalPrice}</span></td>
                                                 </tr>
                                             </table>
                                         </div>

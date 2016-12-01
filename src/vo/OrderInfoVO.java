@@ -22,7 +22,7 @@ public class OrderInfoVO {
 		this.orderAmount = orderAmount;
 		this.orderStatus = orderStatus;
 		this.productId = productId;
-		Id = id;
+		this.Id = id;
 	}
 	
 	public int getOrderPk() {

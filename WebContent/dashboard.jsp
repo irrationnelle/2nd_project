@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +39,7 @@
         <div class="my-account">
           
           <div class="dashboard">
-            <div class="welcome-msg"> <strong>Hello, John Doe.</strong>
+            <div class="welcome-msg"> <strong>Hello, ${sessionScope.loginId}</strong>
               <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
             </div>
             <div class="recent-orders">
@@ -63,22 +65,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="first odd">
-                      <td>500000002</td>
-                      <td>9/9/10 </td>
-                      <td>John D.</td>
-                      <td><span class="price">$5.00</span></td>
-                      <td><em>Pending</em></td>
-                      <td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
-                    </tr>
-                    <tr class="last even">
-                      <td>500000001</td>
-                      <td>9/9/10 </td>
-                      <td>John D.</td>
-                      <td><span class="price">$1,397.99</span></td>
-                      <td><em>Pending</em></td>
-                      <td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
-                    </tr>
+                    <c:forEach var="items" items="${requestScope.orderInfoList}">
+	                    <tr>
+	                    	<td> ${items.orderId} </td>
+	                    	<td> ${items.orderDate} </td>
+	                    	<td> ${items.id} </td>
+	                    	<td> ${items.orderAmount} </td>
+	                    	<td> ${items.orderStatus} </td>
+	                    	<td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
+	                    </tr>
+                    </c:forEach>
                   </tbody>
                 </table>
               </div>

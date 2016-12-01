@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import service.CartService;
 import service.MemberService;
 import service.ProductService;
+import vo.CartPageVO;
 import vo.CartVO;
 import vo.MemberVO;
 import vo.ProductVO;
@@ -46,14 +47,17 @@ public class CartController extends HttpServlet{
 		
 		List<CartVO> cartList = null;
 		
+		CartPageVO cartPage = null;
+		
+		int result = -1;
+		
 		switch (action) {
 		case "addcart":
 			String productIdStr = request.getParameter("productId");
 			String cartAmountStr = request.getParameter("amount");
 			int productId = -1;
 			int cartAmount = -1;
-			int result = -1;
-			
+						
 			if(productIdStr != null && productIdStr.length()>=0) {
 				productId = Integer.parseInt(productIdStr);
 			}
@@ -67,21 +71,20 @@ public class CartController extends HttpServlet{
 			viewPath = "cart.do?action=showCart&userId="+userId;
 			break;
 			
+//		case "showCart":
+//			cartList = cService.showCartList(userId);
+//			request.setAttribute("cartList", cartList);
+//			viewPath = "shopping_cart.jsp";
+//			break;
+			
 		case "showCart":
-			cartList = cService.showCartList(userId);
-			request.setAttribute("cartList", cartList);
+			cartPage = cService.showCartPage(userId);
+			request.setAttribute("cartPage", cartPage);
 			viewPath = "shopping_cart.jsp";
 			break;
 		
 		case "clearCart":
-			String clearCartStr = request.getParameter("clearCart");
-			
-			if(clearCartStr != null && clearCartStr.length()>=0) {
-				int clearCart = Integer.parseInt(clearCartStr);
-			}
-			
-			//int clearCart = service.deleteCart(clearCart);
-		
+			result = cService.clearCart(userId);
 			viewPath = "cart.do?action=showCart";
 			break;
 			
@@ -97,8 +100,8 @@ public class CartController extends HttpServlet{
 			break;
 			
 		case "passCart":
-			cartList = cService.showCartList(userId);
-			request.setAttribute("cartList", cartList);
+			cartPage = cService.showCartPage(userId);
+			request.setAttribute("cartPage", cartPage);
 			
 			MemberVO member = mService.showMember(userId);
 			request.setAttribute("member", member);
