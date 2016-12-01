@@ -39,8 +39,11 @@ public class ProductDAO {
 					+ "PRODUCT_PRICE,"
 					+ "PRODUCT_DETAIL,"
 					+ "PRODUCT_IMAGE,"
-					+ "PRODUCT_BRAND"
-					+ " FROM product WHERE ID=?";
+					+ "PRODUCT_IMAGEDETAIL01,"
+					+ "PRODUCT_IMAGEDETAIL02,"
+					+ "PRODUCT_IMAGEDETAIL03,"
+					+ "PRODUCT_detail_ex"
+					+ " FROM product WHERE PRODUCT_ID=?";
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setInt(1, productId);
@@ -53,6 +56,10 @@ public class ProductDAO {
 				result.setProductPrice(resultset.getInt(4));
 				result.setProductDetail(resultset.getString(5));
 				result.setProductImage(resultset.getString(6));
+				result.setProductImagedetail01(resultset.getString(7));
+				result.setProductImagedetail02(resultset.getString(8));
+				result.setProductImagedetail03(resultset.getString(9));
+				result.setProductDetailEX(resultset.getString(10));
 			}
 		} catch (SQLException e) {
 			System.out.println("select product ¿¡·¯");
@@ -87,6 +94,10 @@ public class ProductDAO {
 				product.setProductPrice(rs.getInt(4));
 				product.setProductDetail(rs.getString(5));
 				product.setProductImage(rs.getString(6));
+				product.setProductImagedetail01(rs.getString(7));
+				product.setProductImagedetail02(rs.getString(8));
+				product.setProductImagedetail03(rs.getString(9));
+				product.setProductDetailEX(rs.getString(10));
 	
 				productList.add(product);
 			}
