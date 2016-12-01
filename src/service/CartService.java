@@ -2,14 +2,31 @@ package service;
 
 
 import dao.CartDAO;
+import dao.ProductDAO;
+
 import java.util.List;
 import vo.CartVO;
 
 public class CartService {
+	private static CartService instance = new CartService();
 	
+	public static CartService getInstance(){
+		return instance;
+	}
+	private CartService(){}
+	
+	private ProductDAO productdao = ProductDAO.getInstance();
+	private CartDAO cartdao = CartDAO.getInstance();
 	// 매개 변수 수정해야 함
+//	public int insertCart(String clickAddCart){
+//		int amount = 
+//	}
 	public int insertCart(String clickAddCart){
-		
+		if(clickAddCart != null){
+			CartVO cart = new CartVO();
+			cart.setCartId();
+			int amount = cart.getCartAmount();
+		}
 	}
 	
 	

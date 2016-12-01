@@ -9,19 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.CartService;
 import service.ProductService;
 import vo.CartVO;
 import vo.ProductVO;
 
 @WebServlet("/cart.do")
 public class CartController extends HttpServlet{
-<<<<<<< HEAD
-	/*
+
 	private CartService service = CartService.getInstance();
-=======
-	
-	//private CartService service = CartService.getInstance();
->>>>>>> branch 'master' of https://github.com/irrationnelle/2nd_project.git
+
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -44,20 +41,22 @@ public class CartController extends HttpServlet{
 		
 		switch (action) {
 		
-		case "cart":
-	
+		case "addcart":
+			int cartCount = 0;
 			String clickAddCartStr = request.getParameter("addCart");
 			
 			if(clickAddCartStr != null && clickAddCartStr.length()>=0) {
 				int clickAddCart = Integer.parseInt(clickAddCartStr);
 			}
+			CartVO cart = new CartVO(); 
+			cart.setCartId(cartCount);
 			
 		//	int insertCart = service.insertCart(clickAddCart);
 			//List<CartVO> cartList = service.showCartList(clickAddCart);
 			
 			//request.setAttribute("cartList", cartList);
-			viewPath = "cartList.jsp";
-			break;
+			//viewPath = "cartList.jsp";
+			//break;
 		
 		case "clearCart":
 			String clearCartStr = request.getParameter("clearCart");
@@ -85,5 +84,5 @@ public class CartController extends HttpServlet{
 		}
 		
 	}
-	*/
+	
 }
