@@ -2,7 +2,9 @@ package service;
 
 import java.util.List;
 
+import dao.OrderInfoDAO;
 import dao.ProductDAO;
+import vo.OrderInfoVO;
 import vo.ProductPageVO;
 import vo.ProductVO;
 
@@ -14,6 +16,7 @@ public class ProductService {
 	
 	private ProductService(){}
 	private ProductDAO dao = ProductDAO.getInstance();
+	private OrderInfoDAO orderdao = OrderInfoDAO.getInstance();
 	
 	public ProductVO showDetails(int productId){
 		ProductVO clickedProduct = dao.select(productId);
@@ -55,7 +58,22 @@ public class ProductService {
 	}
 	
 	
-	public ProductVO changeStock(int orderAmount) {
+	public ProductVO changeStock(int productId, String userId, int orderId) {
+		ProductVO product = dao.select(productId);
+		OrderInfoVO order= orderdao.select(userId, orderId);
+		
+		
+		try{
+		
+		int OrderPk = order.getOrderPk();
+		int OrderAmount = order.getOrderAmount();
+		int productStock = product.getProductStock();
+		
+		product.setProductStock(productStock-OrderAmount);
+		dao.update(product);
+		} catch (Exception e){
+			System.out.println("sChange Stock Error");
+		}
 		return new ProductVO();
 	}
 	

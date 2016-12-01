@@ -7,17 +7,26 @@ public class ProductVO {
 	private int productPrice;
 	private String productDetail;
 	private String productImage;
+	private String productImagedetail01;
+	private String productImagedetail02;
+	private String productImagedetail03;
+	private String productDetailEX;
 	
 	public ProductVO() {	}
 
 	public ProductVO(int productId, String productName, int productStock, int productPrice, String productDetail,
-			String productImage, String productBrand) {
+			String productImage, String productImagedetail01, String productImagedetail02, String productImagedetail03,
+			String productDetailEX) {
 		this.productId = productId;
 		this.productName = productName;
 		this.productStock = productStock;
 		this.productPrice = productPrice;
 		this.productDetail = productDetail;
 		this.productImage = productImage;
+		this.productImagedetail01 = productImagedetail01;
+		this.productImagedetail02 = productImagedetail02;
+		this.productImagedetail03 = productImagedetail03;
+		this.productDetailEX = productDetailEX;
 	}
 
 	public int getProductId() {
@@ -68,11 +77,44 @@ public class ProductVO {
 		this.productImage = productImage;
 	}
 
+	public String getProductImagedetail01() {
+		return productImagedetail01;
+	}
+
+	public void setProductImagedetail01(String productImagedetail01) {
+		this.productImagedetail01 = productImagedetail01;
+	}
+
+	public String getProductImagedetail02() {
+		return productImagedetail02;
+	}
+
+	public void setProductImagedetail02(String productImagedetail02) {
+		this.productImagedetail02 = productImagedetail02;
+	}
+
+	public String getProductImagedetail03() {
+		return productImagedetail03;
+	}
+
+	public void setProductImagedetail03(String productImagedetail03) {
+		this.productImagedetail03 = productImagedetail03;
+	}
+
+	public String getProductDetailEX() {
+		return productDetailEX;
+	}
+
+	public void setProductDetailEX(String productDetailEX) {
+		this.productDetailEX = productDetailEX;
+	}
 
 	@Override
 	public String toString() {
 		return "ProductVO [productId=" + productId + ", productName=" + productName + ", productStock=" + productStock
 				+ ", productPrice=" + productPrice + ", productDetail=" + productDetail + ", productImage="
-				+ productImage + "]";
+				+ productImage + ", productImagedetail01=" + productImagedetail01 + ", productImagedetail02="
+				+ productImagedetail02 + ", productImagedetail03=" + productImagedetail03 + ", productDetailEX="
+				+ productDetailEX + "]";
 	}
 }

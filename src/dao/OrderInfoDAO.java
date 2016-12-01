@@ -57,9 +57,9 @@ public class OrderInfoDAO {
 		}
 		return result;
 	}
-	
+
 	// DB Select Method
-	public OrderInfoVO select(String userId, int orderId) {
+	public OrderInfoVO select(String userId, int OrderId) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		ResultSet resultset = null;
@@ -72,7 +72,7 @@ public class OrderInfoDAO {
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setString(1, userId);
-			pstatement.setInt(2, orderId);
+			pstatement.setInt(2, OrderId);
 			resultset = pstatement.executeQuery();
 			if (resultset.next()) {
 				result = new OrderInfoVO();
@@ -97,41 +97,40 @@ public class OrderInfoDAO {
 	}
 
 	//DB SelectByOrderPk Method
-	public OrderInfoVO selectByOrderPk(OrderInfoVO orderInfo){
-		Connection connection = null;
-		PreparedStatement pstatement = null;
-		ResultSet resultset = null;
-		OrderInfoVO result = orderInfo;
-		try {
-			connection = DBUtil.makeConnection();
-			String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
-					+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_PK = ?";
-			pstatement = connection.prepareStatement(sql);
-			
-			pstatement.setInt(1, orderInfo.getOrderPk());
-			resultset = pstatement.executeQuery();
-			
-			if (resultset.next()) {
-				result = new OrderInfoVO();
-				result.setOrderPk(resultset.getInt(1));
-				result.setOrderId(resultset.getInt(2));
-				result.setOrderDate(resultset.getTimestamp(3));
-				result.setOrderAmount(resultset.getInt(4));
-				result.setOrderStatus(resultset.getString(5));
-				result.setProductId(resultset.getInt(6));
-				result.setId(resultset.getString(7));
-			}
+		public OrderInfoVO selectByOrderPk(OrderInfoVO orderInfo){
+			Connection connection = null;
+			PreparedStatement pstatement = null;
+			ResultSet resultset = null;
+			OrderInfoVO result = orderInfo;
+			try {
+				connection = DBUtil.makeConnection();
+				String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
+						+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_PK = ?";
+				pstatement = connection.prepareStatement(sql);
+				
+				pstatement.setInt(1, orderInfo.getOrderPk());
+				resultset = pstatement.executeQuery();
+				
+				if (resultset.next()) {
+					result = new OrderInfoVO();
+					result.setOrderPk(resultset.getInt(1));
+					result.setOrderId(resultset.getInt(2));
+					result.setOrderDate(resultset.getTimestamp(3));
+					result.setOrderAmount(resultset.getInt(4));
+					result.setOrderStatus(resultset.getString(5));
+					result.setProductId(resultset.getInt(6));
+					result.setId(resultset.getString(7));
+				}
 
-		} catch (SQLException e) {
-			System.out.println("selectByOrderPk orderinfo error");
-			e.printStackTrace();
-		} finally {
-			DBUtil.close(pstatement);
-			DBUtil.close(connection);
+			} catch (SQLException e) {
+				System.out.println("selectByOrderPk orderinfo error");
+				e.printStackTrace();
+			} finally {
+				DBUtil.close(pstatement);
+				DBUtil.close(connection);
+			}
+			return result;
 		}
-		return result;
-	}
-	
 	// DB Delete Method
 	public int delete(OrderInfoVO orderInfo) {
 		Connection connection = null;

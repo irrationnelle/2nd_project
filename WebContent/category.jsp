@@ -46,14 +46,14 @@
                                     <div class="product-wrapper">
                                         <div class="sale_tag"> SALE</div>
                                         <div class="thumb-wrapper img_mask">
-                                            <a class="product_image image-wrapper" href="product_detail.jsp">
+                                            <a class="product_image image-wrapper" href="product.do?action=detail&productNum=${item.productId}">
                                                 <img class="front_image" alt="Pro Image" src="${item.productImage}">
                                                 <img class="back_image" alt="Pro Image" src="${item.productImage}">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <h3 class="product_title"><a href="product_detail.jsp">${item.productName}</a></h3>
+                                    <h3 class="product_title"><a href="product.do?action=detail&productNum=${item.productId}">${item.productName}</a></h3>
                                     <div class="ratings">
                                         <div class="rating-box">
                                             <div class="rating" style="width:20%"></div>
