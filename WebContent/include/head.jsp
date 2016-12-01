@@ -9,7 +9,7 @@
     
     <!-- Favicons Icon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <title>죽을만큼 코딩하면 죽을지도 모른다</title>
+    <title>Lunchin' :: 유명인사와의 점심식사!</title>
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     
