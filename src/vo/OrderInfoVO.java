@@ -7,14 +7,14 @@ public class OrderInfoVO {
 	private int orderId;
 	private Timestamp orderDate;
 	private int orderAmount;
-	private int orderStatus;
+	private String orderStatus;
 	private int productId;
-	private int Id;
+	private String Id;
 	
 	public OrderInfoVO(){};
 	
-	public OrderInfoVO(int orderPk, int orderId, Timestamp orderDate, int orderAmount, int orderStatus, int productId,
-			int id) {
+	public OrderInfoVO(int orderPk, int orderId, Timestamp orderDate, int orderAmount, String orderStatus, int productId,
+			String id) {
 		super();
 		this.orderPk = orderPk;
 		this.orderId = orderId;
@@ -49,10 +49,10 @@ public class OrderInfoVO {
 	public void setOrderAmount(int orderAmount) {
 		this.orderAmount = orderAmount;
 	}
-	public int getOrderStatus() {
+	public String getOrderStatus() {
 		return orderStatus;
 	}
-	public void setOrderStatus(int orderStatus) {
+	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 	public int getProductId() {
@@ -61,10 +61,10 @@ public class OrderInfoVO {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 	
