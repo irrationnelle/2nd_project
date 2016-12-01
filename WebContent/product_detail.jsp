@@ -29,9 +29,9 @@
                                 <div class="flexslider">
                                     <ul class="slides">
 <!--                                         <li><img alt="" class="img-responsive" src="product_images/pro_det_image.jpg" height="450" width="400" ></li> -->
-                                        <li><img alt="" class="img-responsive" src="product_images\product_det1.jpg"> </li>
-                                        <li><img alt="" class="img-responsive" src="product_images\product_det1_02.jpg" > </li>
-                                        <li><img alt="" class="img-responsive" src="product_images\product_det1_03.jpg"> </li>				
+                                        <li><img alt="" class="img-responsive" src="${requestScope.productDetail.productImagedetail01}"> </li>
+                                        <li><img alt="" class="img-responsive" src="${requestScope.productDetail.productImagedetail02}" > </li>
+                                        <li><img alt="" class="img-responsive" src="${requestScope.productDetail.productImagedetail03}"> </li>				
                                     </ul>
                                 </div>
                             </div>     
@@ -83,8 +83,8 @@
                             <div class="filter col-lg-7 col-md-7">
                                 <label>
                                     <select class="border_rnone">
-                                        <option selected> Heather Grey </option>
-                                        <option>Charcoal Grey</option>
+                                        <option selected> 팬미팅</option>
+                                        <option>스타데이트</option>
                                     </select>
                                 </label>
                             </div>
