@@ -16,7 +16,7 @@ import vo.ProductVO;
 @WebServlet("/cart.do")
 public class CartController extends HttpServlet{
 	
-	private CartService service = CartService.getInstance();
+	//private CartService service = CartService.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -47,10 +47,10 @@ public class CartController extends HttpServlet{
 				int clickAddCart = Integer.parseInt(clickAddCartStr);
 			}
 			
-			int insertCart = service.insertCart(clickAddCart);
-			List<CartVO> cartList = service.showCartList(clickAddCart);
+		//	int insertCart = service.insertCart(clickAddCart);
+			//List<CartVO> cartList = service.showCartList(clickAddCart);
 			
-			request.setAttribute("cartList", cartList);
+			//request.setAttribute("cartList", cartList);
 			viewPath = "cartList.jsp";
 			break;
 		
@@ -61,7 +61,7 @@ public class CartController extends HttpServlet{
 				int clearCart = Integer.parseInt(clearCartStr);
 			}
 			
-			int clearCart = service.deleteCart(clearCart);
+			//int clearCart = service.deleteCart(clearCart);
 		
 			viewPath = "cart.do?action=cart";
 			break;
@@ -73,7 +73,7 @@ public class CartController extends HttpServlet{
 				int updateCart = Integer.parseInt(updateCartStr);
 			}
 			
-			int updateCart = service.updateCart(updateCart);
+			//int updateCart = service.updateCart(updateCart);
 			viewPath = "cart.do?action=cart";
 			break;
 			// 우와 과자다!! 감사합니다!!하하 이얏호!!!!!!!!!!!!

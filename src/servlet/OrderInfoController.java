@@ -27,7 +27,7 @@ public class OrderInfoController extends HttpServlet{
 
 		switch(action) {
 		case "checkout":
-			String 
+			//String 
 			break;
 		}
 	}
