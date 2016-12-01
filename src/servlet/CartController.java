@@ -42,7 +42,7 @@ public class CartController extends HttpServlet{
 		switch (action) {
 		
 		case "addcart":
-			int cartCount = 0;
+			int cartCount = 10000;
 			String clickAddCartStr = request.getParameter("addCart");
 			
 			if(clickAddCartStr != null && clickAddCartStr.length()>=0) {
@@ -50,6 +50,9 @@ public class CartController extends HttpServlet{
 			}
 			CartVO cart = new CartVO(); 
 			cart.setCartId(cartCount);
+			cart.setCartAmount(request.getParameter("amount"));
+			cart.getProductId()
+			
 			
 		//	int insertCart = service.insertCart(clickAddCart);
 			//List<CartVO> cartList = service.showCartList(clickAddCart);
