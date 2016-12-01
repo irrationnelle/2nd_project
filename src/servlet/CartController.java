@@ -16,7 +16,7 @@ import vo.ProductVO;
 @WebServlet("/cart.do")
 public class CartController extends HttpServlet{
 	
-//	private CartService service = CartService.getInstance();
+	private CartService service = CartService.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -45,11 +45,11 @@ public class CartController extends HttpServlet{
 			if(clickAddCartStr != null && clickAddCartStr.length()>=0) {
 				int clickAddCart = Integer.parseInt(clickAddCartStr);
 			}
-//			
-//			int insertCart = service.insertCart(clickAddCart);
-//			List<CartVO> cartList = service.showCartList(clickAddCart);
 			
-//			request.setAttribute("cartList", cartList);
+			int insertCart = service.insertCart(clickAddCart);
+			List<CartVO> cartList = service.showCartList(clickAddCart);
+			
+			request.setAttribute("cartList", cartList);
 			viewPath = "cartList.jsp";
 			break;
 		
@@ -60,14 +60,27 @@ public class CartController extends HttpServlet{
 				int clearCart = Integer.parseInt(clearCartStr);
 			}
 			
-//			int clearCart = service.deleteCart(clearCart);
+			int clearCart = service.deleteCart(clearCart);
+			List<CartVO> cartList = service.showCartList(clickAddCart);
 			
-//			request.setAttribute("cartList", cartList);
+			request.setAttribute("cartList", cartList);
 			viewPath = "cartList.jsp";
 			break;
 			
-//		case "updateCart";
+		case "updateCart":
+			String updateCartStr = request.getParameter("updateCart");
 			
+			if(updateCartStr != null && updateCartStr.length()>=0) {
+				int updateCart = Integer.parseInt(updateCartStr);
+			}
+			
+			int updateCart = service.updateCart(updateCart);
+			List<CartVO> cartList = service.showCartList(clickAddCart);
+			
+			request.setAttribute("cartList", cartList);
+			viewPath = "cartList.jsp";
+			break;
+	
 		}
 		
 	}
