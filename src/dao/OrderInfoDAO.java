@@ -18,7 +18,7 @@ public class OrderInfoDAO {
 	public static OrderInfoDAO getInstance() {
 		return instance;
 	}
-
+	// hi
 	// order_pk int primary key not null auto_increment,
 	// order_id int not null,
 	// order_date datetime not null,
