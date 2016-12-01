@@ -38,16 +38,17 @@ public class CartController extends HttpServlet{
 		
 		String action = request.getParameter("action");
 		String viewPath = "";
+		String userId = null;
 		
 		switch (action) {
 		case "addcart":
-//			int cartCount = 10000;
 			String productIdStr = request.getParameter("productId");
 			String cartAmountStr = request.getParameter("amount");
-			String userId = request.getParameter("userId");
 			
+			userId = request.getParameter("userId");
 			int productId = -1;
 			int cartAmount = -1;
+			int result = -1;
 			
 			if(productIdStr != null && productIdStr.length()>=0) {
 				productId = Integer.parseInt(productIdStr);
@@ -58,14 +59,14 @@ public class CartController extends HttpServlet{
 			}
 			
 			CartVO cart = new CartVO(); 
-//			cart.setCartId(cartCount);
-			cart.setCartAmount(cartAmount);
-			cart.setProductId(productId);
-			cart.setUserId(userId);
+					
+			result = service.insertCart(userId, productId, cartAmount);
+			viewPath = "cart.do?action=showCart&userId=" + userId;
+			break;
 			
-		//	int insertCart = service.insertCart(clickAddCart);
-			List<CartVO> cartList = service.showCartList(clickAddCart);
-			
+		case "showCart":
+			userId = request.getParameter("userId");
+			List<CartVO> cartList = service.showCartList(userId);
 			request.setAttribute("cartList", cartList);
 			viewPath = "cartList.jsp";
 			break;
@@ -82,19 +83,16 @@ public class CartController extends HttpServlet{
 			viewPath = "cart.do?action=cart";
 			break;
 			
-		case "updateCart":
-			String updateCartStr = request.getParameter("updateCart");
+		case "changeCart":
+			String changeCartStr = request.getParameter("changeCart");
 			
-			if(updateCartStr != null && updateCartStr.length()>=0) {
-				int updateCart = Integer.parseInt(updateCartStr);
+			if(changeCartStr != null && changeCartStr.length()>=0) {
+				int updateCart = Integer.parseInt(changeCartStr);
 			}
 			
 			//int updateCart = service.updateCart(updateCart);
 			viewPath = "cart.do?action=cart";
 			break;
-			// 우와 과자다!! 감사합니다!!하하 이얏호!!!!!!!!!!!!
 		}
-		
 	}
-	
 }

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,72 +54,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="first odd">
-                                                <td class="shopping-table-image">
-                                                    <a class="product-image" title="Women's Crepe Printed Black" href=""><img alt="Women's Crepe Printed Black" src="images/small_image.jpg"></a>
-                                                </td>
-                                                <td><h2 class="product-name"><a href="">Women's Crepe Printed Black</a></h2></td>
-                                                <td class="a-right shopping-table-title-product">
-                                                    <div class="product-name">
-                                                        <span class="cart-price">
-                                                            <span class="price"></span>
-                                                            <span class="cart-text">COD:
-                                                                <span class="available">Available</span><br>
-                                                                Will Ship By:
-                                                                <span class="ship-date">Tue,Sep 01st</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15945][qty]"></div></td>
-                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">$70</span></span></div></td>
-                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
-                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
-                                            </tr>
-                                            <tr class="first odd">
-                                                <td class="shopping-table-image">
-                                                    <a class="product-image" title="Women's Crepe Printed Black" href=""><img alt="Women's U Tank Top" src="images/small_image.jpg"></a>
-                                                </td>
-                                                <td><h2 class="product-name"><a href="">Women's U Tank Top</a></h2></td>
-                                                <td class="a-right shopping-table-title-product">
-                                                    <div class="product-name">
-                                                        <span class="cart-price">
-                                                            <span class="price"></span>
-                                                            <span class="cart-text">COD:
-                                                                <span class="not-available">Not Available</span><br>
-                                                                Will Ship By:
-                                                                <span class="ship-date">Tue,Sep 01st</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15945][qty]"></div></td>
-                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">$7.38</span></span></div></td>
-                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
-                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
-                                            </tr>
-                                            <tr class="first odd">
-                                                <td class="shopping-table-image">
-                                                    <a class="product-image" title="Women's Crepe Printed Black" href=""><img alt="Donec non est" src="images/small_image.jpg"></a>
-                                                </td>
-                                                <td><h2 class="product-name"><a href="">Donec non est</a></h2></td>
-                                                <td class="a-right shopping-table-title-product">
-                                                    <div class="product-name">
-                                                        <span class="cart-price">
-                                                            <span class="price"></span>
-                                                            <span class="cart-text">COD:
-                                                                <span class="available">Available</span><br>
-                                                                Will Ship By:
-                                                                <span class="ship-date">Tue,Sep 01st</span>
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15945][qty]"></div></td>
-                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">$100</span></span></div></td>
-                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
-                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
-                                            </tr>
+                                        <!-- 반복문이 시작되는 곳 -->
+                                        	<c:forEach var="items" items="${requestScope.cartList}">
+	                                            <tr class="first odd">
+	                                                <td class="shopping-table-image">
+	                                                    <a class="product-image" title="Women's Crepe Printed Black" href=""><img alt="Women's Crepe Printed Black" src="images/small_image.jpg"></a>
+	                                                </td>
+	                                                <td><h2 class="product-name"><a href="">상품 이름 들어가는 곳</a></h2></td>
+	                                                <td class="a-right shopping-table-title-product">
+	                                                    <div class="product-name">
+	                                                        <span class="cart-price">
+	                                                            <span class="price"></span>
+	                                                            <span class="cart-text">COD:
+	                                                                <span class="available">Available</span><br>
+	                                                                Will Ship By:
+	                                                                <span class="ship-date">Tue,Sep 01st</span>
+	                                                            </span>
+	                                                        </span>
+	                                                    </div>
+	                                                </td>
+	                                                <td class="a-center movewishlist"><div class="product-name"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15945][qty]"></div></td>
+	                                                <td class="a-right movewishlist"><div class="product-name"><span class="cart-price"><span class="price">items.cartPrice</span></span></div></td>
+	                                                <td class="a-center cart_edit_near"><div class="product-name cart_edit"><a class="edit-bnt" data-toggle="tooltip" data-placement="top" title="Edit Item" data-original-title="Edit Item"></a></div></td>
+	                                                <td class="a-center"><div class="product-name"><a class="remove-item" data-toggle="tooltip" data-placement="top" title="Remove item" data-original-title="Remove Item"></a></div></td>
+	                                            </tr>
+                                        	</c:forEach>
                                         </tbody>
                                     </table>
                                     <div class="grand_total">

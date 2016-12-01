@@ -121,20 +121,17 @@ public class CartDAO {
 	}
 
 	// DB Update Method
-	public void update(CartVO cart) {
+	public int update(int cartAmount, int cartPk) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		int result = 0;
 
 		try {
 			connection = DBUtil.makeConnection();
-			String sql = "UPDATE cart SET CART_ID=? CART_AMOUNT=? WHERE CART_PK=? AND USER_ID AND PRODUCT_ID=?";
+			String sql = "UPDATE cart SET CART_AMOUNT=? WHERE CART_PK=?";
 			pstatement = connection.prepareStatement(sql);
-			pstatement.setInt(1, cart.getCartId());
-			pstatement.setInt(2, cart.getCartAmount());
-			pstatement.setInt(3, cart.getCartPk());
-			pstatement.setString(4, cart.getUserId());
-			pstatement.setInt(5, cart.getProductId());
+			pstatement.setInt(1, cartAmount);
+			pstatement.setInt(2, cartPk);
 
 			result = pstatement.executeUpdate();
 		} catch (SQLException e) {
@@ -144,21 +141,23 @@ public class CartDAO {
 			DBUtil.close(pstatement);
 			DBUtil.close(connection);
 		}
+		return result;
 	}
 
 	// DB Delete Method
-	public void delete(CartVO cart) {
+	public int delete(int cartPk, String userId) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
+		int result = 0;
 
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "DELETE FROM cart WHERE CART_PK = ? AND USER_ID = ?";
 			pstatement = connection.prepareStatement(sql);
-			pstatement.setInt(1, cart.getCartPk());
-			pstatement.setString(2, cart.getUserId());
-			pstatement.executeQuery();
-
+			pstatement.setInt(1, cartPk);
+			pstatement.setString(2, userId);
+			
+			result = pstatement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("delete cart error");
 			e.printStackTrace();
@@ -166,5 +165,7 @@ public class CartDAO {
 			DBUtil.close(pstatement);
 			DBUtil.close(connection);
 		}
+		
+		return result;
 	}
 }
