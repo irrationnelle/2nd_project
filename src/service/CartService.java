@@ -23,4 +23,8 @@ public class CartService {
 	public int updateCart(updateCart) {
 		
 	}
+	
+	public List<CartVO> passCartList(String userId) {
+		List<CartVO>  dao.selectList(userID)
+	}
 }
