@@ -5,7 +5,6 @@ public class CartVO {
 	private int cartId;
 	private int cartAmount;
 	private String userId;
-
 	private int productId;
 	private String productName;
 	private int productPrice;

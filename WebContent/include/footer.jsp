@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer_logo"><a title="scilla" href="index.jsp"><img class="img-responsive" alt="scilla" src="images/scilla_logo.png"></a></div>
+                        <div class="footer_logo"><a title="scilla" href="index.jsp"><img class="img-responsive" alt="scilla" src="images/logo2.png"></a></div>
                         <ul class="m_links">
                             <li><i class="glyphicon glyphicon-phone-alt"></i> <span>+1 800 123 1234</span></li>
                             <li class="Add"><i class="glyphicon glyphicon-home"></i> <span>123 Main Street, Anytown, CA 12345 USA</span></li>

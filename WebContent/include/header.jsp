@@ -20,10 +20,10 @@
                             <!-- Left Menu Holder --> 
                             <div class="logo-cat">
                                 <span class="menu-button__label__text-opened">
-                                    <span class="logo-style"> <a href="index.jsp"><img id="logoimage" class="img-responsive" alt="scilla" src="images/scilla_logo_index.png"></a></span>
+                                    <span class="logo-style"> <a href="index.jsp"><img id="logoimage" class="img-responsive" alt="scilla" src="images/logo2.png"></a></span>
                                 </span>
                                 <span class="menu-button__label__text-closed">
-                                    <span class="logo-style"> <a href="index.jsp"><img id="logoimage1" class="img-responsive" alt="scilla" src="images/scilla_logo_index.png"></a> </span>     
+                                    <span class="logo-style"> <a href="index.jsp"><img id="logoimage1" class="img-responsive" alt="scilla" src="images/logo2.png"></a> </span>     
                                 </span>	 
                             </div>
                         </div>
