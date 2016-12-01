@@ -62,10 +62,8 @@ public class CartController extends HttpServlet{
 			}
 			
 			int clearCart = service.deleteCart(clearCart);
-			List<CartVO> cartList = service.showCartList(clickAddCart);
-			
-			request.setAttribute("cartList", cartList);
-			viewPath = "cartList.jsp";
+		
+			viewPath = "cart.do?action=cart";
 			break;
 			
 		case "updateCart":
@@ -76,12 +74,9 @@ public class CartController extends HttpServlet{
 			}
 			
 			int updateCart = service.updateCart(updateCart);
-			List<CartVO> cartList = service.showCartList(clickAddCart);
-			
-			request.setAttribute("cartList", cartList);
-			viewPath = "cartList.jsp";
+			viewPath = "cart.do?action=cart";
 			break;
-	// 우와 과자다!! 감사합니다!!하하 이얏호!!!!!!!!!!!!
+			// 우와 과자다!! 감사합니다!!하하 이얏호!!!!!!!!!!!!
 		}
 		
 	}

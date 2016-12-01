@@ -98,7 +98,7 @@ public class OrderInfoDAO {
 	}
 	
 	// DB Select Method
-	public OrderInfoVO select(String userId, int OrderPk) {
+	public OrderInfoVO select(String userId, int orderPk) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		ResultSet resultset = null;
@@ -111,7 +111,7 @@ public class OrderInfoDAO {
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setString(1, userId);
-			pstatement.setInt(2, OrderPk);
+			pstatement.setInt(2, orderPk);
 			resultset = pstatement.executeQuery();
 			if (resultset.next()) {
 				result = new OrderInfoVO();
