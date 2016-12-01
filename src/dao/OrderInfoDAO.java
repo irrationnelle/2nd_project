@@ -98,7 +98,7 @@ public class OrderInfoDAO {
 	}
 	
 	// DB Select Method
-	public OrderInfoVO select(String userId, int OrderId) {
+	public OrderInfoVO select(String userId, int OrderPk) {
 		Connection connection = null;
 		PreparedStatement pstatement = null;
 		ResultSet resultset = null;
@@ -107,11 +107,11 @@ public class OrderInfoDAO {
 		try {
 			connection = DBUtil.makeConnection();
 			String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
-					+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE USER_ID=? AND ORDER_ID=?";
+					+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE USER_ID=? AND ORDER_PK=?";
 			pstatement = connection.prepareStatement(sql);
 
 			pstatement.setString(1, userId);
-			pstatement.setInt(2, OrderId);
+			pstatement.setInt(2, OrderPk);
 			resultset = pstatement.executeQuery();
 			if (resultset.next()) {
 				result = new OrderInfoVO();
@@ -135,8 +135,8 @@ public class OrderInfoDAO {
 		return result;
 	}
 
-	//DB SelectByOrderPk Method
-		public OrderInfoVO selectByOrderPk(OrderInfoVO orderInfo){
+	//DB SelectByOrderId Method
+		public OrderInfoVO selectByOrderId(OrderInfoVO orderInfo){
 			Connection connection = null;
 			PreparedStatement pstatement = null;
 			ResultSet resultset = null;
@@ -144,10 +144,10 @@ public class OrderInfoDAO {
 			try {
 				connection = DBUtil.makeConnection();
 				String sql = "SELECT ORDER_PK,ORDER_ID,ORDER_DATE,ORDER_AMOUNT,"
-						+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_PK = ?";
+						+ "ORDER_STATUS,PRODUCT_ID,USER_ID WHERE ORDER_ID = ?";
 				pstatement = connection.prepareStatement(sql);
 				
-				pstatement.setInt(1, orderInfo.getOrderPk());
+				pstatement.setInt(1, orderInfo.getOrderId());
 				resultset = pstatement.executeQuery();
 				
 				if (resultset.next()) {
@@ -162,7 +162,7 @@ public class OrderInfoDAO {
 				}
 
 			} catch (SQLException e) {
-				System.out.println("selectByOrderPk orderinfo error");
+				System.out.println("selectByOrderId orderinfo error");
 				e.printStackTrace();
 			} finally {
 				DBUtil.close(pstatement);
