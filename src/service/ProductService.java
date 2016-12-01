@@ -10,71 +10,73 @@ import vo.ProductVO;
 
 public class ProductService {
 	private static ProductService instance = new ProductService();
-	public static ProductService getInstance(){
+
+	public static ProductService getInstance() {
 		return instance;
 	}
-	
-	private ProductService(){}
+
+	private ProductService() {
+	}
+
 	private ProductDAO dao = ProductDAO.getInstance();
 	private OrderInfoDAO orderdao = OrderInfoDAO.getInstance();
-	
-	public ProductVO showDetails(int productId){
+
+	public ProductVO showDetails(int productId) {
 		ProductVO clickedProduct = dao.select(productId);
-		if(clickedProduct !=null){
+		if (clickedProduct != null) {
 			return clickedProduct;
 		} else {
-			
+
 			return null;
 		}
 	}
-	
-	
-	public ProductPageVO makePage(int currentPage){
+
+	public ProductPageVO makePage(int currentPage) {
 		final int PAGE_PER_COUNT = 6; // 한페이지에 보여질 글의갯수
-		
-		int startRow = (currentPage-1)*PAGE_PER_COUNT;
-		int endRow = startRow+PAGE_PER_COUNT;
-		
+
+		int startRow = (currentPage - 1) * PAGE_PER_COUNT;
+		int endRow = startRow + PAGE_PER_COUNT;
+
 		// 현재 페이지에 보여줄 글을 DB에서 조회
 		List<ProductVO> productList = dao.selectList(startRow, endRow);
-		
+
 		// 총 게시글 갯수 조회
 		int productTotalCount = dao.selectCount();
-		
+
 		// 총 페이지수 계산
-		int totalPage = productTotalCount/PAGE_PER_COUNT;
-		if(productTotalCount%PAGE_PER_COUNT != 0)
+		int totalPage = productTotalCount / PAGE_PER_COUNT;
+		if (productTotalCount % PAGE_PER_COUNT != 0)
 			totalPage++;
-		
+
 		// 페이지 하단의 시작페이지 계산
-		int startPage = (currentPage-1)/10*10+1;
-		
+		int startPage = (currentPage - 1) / 10 * 10 + 1;
+
 		// 페이지 하단의 끝페이지 계산
-		int endPage = startPage+9;
-		if(endPage>totalPage)
+		int endPage = startPage + 9;
+		if (endPage > totalPage)
 			endPage = totalPage;
-		
-		return new ProductPageVO(productList, currentPage, startPage,endPage, totalPage);
+
+		return new ProductPageVO(productList, currentPage, startPage, endPage, totalPage);
 	}
-	
-	
-	public ProductVO changeStock(int productId, String userId, int orderPk) {
-		ProductVO product = dao.select(productId);
-		OrderInfoVO order= orderdao.selectByOrderPk(order);
-		
-		try{
-			
-			int OrderPk = order.getOrderPk();
+
+	public boolean changeStock(String userId, int orderPk) {
+		OrderInfoVO order = orderdao.select(userId, orderPk);
+		ProductVO product = dao.select(order.getProductId());
+		boolean changeStockResult = false;
+		try {
 			int OrderAmount = order.getOrderAmount();
 			int productStock = product.getProductStock();
-			
-			product.setProductStock(productStock-OrderAmount);
-			dao.update(product);
-			} catch (Exception e){
-				System.out.println("sChange Stock Error");
+			if (productStock >= OrderAmount) {
+				product.setProductStock(productStock - OrderAmount);
+				dao.update(product);
+				changeStockResult = true;
+			} else {
+				changeStockResult = false;
 			}
-		return new ProductVO();
+		} catch (Exception e) {
+			System.out.println("changeStock Error");
+		}
+		return changeStockResult;
 	}
-	
-	
+
 }
