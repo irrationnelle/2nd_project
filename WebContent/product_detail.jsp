@@ -83,8 +83,8 @@
                             <div class="filter col-lg-7 col-md-7">
                                 <label>
                                     <select class="border_rnone">
-                                        <option selected> Heather Grey </option>
-                                        <option>Charcoal Grey</option>
+                                        <option selected> 팬미팅</option>
+                                        <option>스타데이트</option>
                                     </select>
                                 </label>
                             </div>
