@@ -29,7 +29,7 @@
         	<div class="error_title">
             	<div class="title_head">
                 	<h2>404</h2>
-                	<span>요청한 페이지를 찾을 수가 없네요!</span><br>
+                	<span>요청하신 페이지를 찾을 수가 없네요!</span><br>
                 	<img src="images/bg_srchStore.png">
                 </div>
             </div>
