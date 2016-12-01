@@ -11,16 +11,17 @@ public class CartVO {
 	private int productPrice;
 	private String productImage;
 
-	public CartVO() {
-	}
+	public CartVO() {	}
 
-	public CartVO(int cartPk, int cartId, int cartAmount, String userId, int productId) {
-		super();
+	public CartVO(int cartPk, int cartId, int cartAmount, String userId, int productId, String productName, int productPrice, String productImage) {
 		this.cartPk = cartPk;
 		this.cartId = cartId;
 		this.cartAmount = cartAmount;
 		this.userId = userId;
 		this.productId = productId;
+		this.productName = productName;
+		this.productPrice = productPrice;
+		this.productImage = productImage;
 	}
 
 	public int getCartPk() {
@@ -61,5 +62,36 @@ public class CartVO {
 
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public int getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public String getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
+
+	@Override
+	public String toString() {
+		return "CartVO [cartPk=" + cartPk + ", cartId=" + cartId + ", cartAmount=" + cartAmount + ", userId=" + userId
+				+ ", productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
+				+ ", productImage=" + productImage + "]";
 	}
 }
