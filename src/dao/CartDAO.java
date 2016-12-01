@@ -86,7 +86,7 @@ public class CartDAO {
 		return result;
 	}
 
-	// DB selectList Method
+	//DB selectList Method
 	public List<CartVO> selectList(int startRow, int endRow) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
