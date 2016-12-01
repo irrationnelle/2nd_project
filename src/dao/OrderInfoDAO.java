@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.*;
 
 import vo.OrderInfoVO;
 
@@ -57,7 +58,45 @@ public class OrderInfoDAO {
 		}
 		return result;
 	}
-
+	
+	//DB selectList Method
+	public List<OrderInfoVO> selectList(int startRow, int endRow){
+		Connection con = null;
+		PreparedStatement pstmt= null;
+		ResultSet resultset = null;
+		List<OrderInfoVO> OrderInfoList = new ArrayList<>();
+		
+		try {
+			con = DBUtil.makeConnection();
+			String sql=
+			"SELECT * FROM order_info ORDER BY ORDER_ID DESC LIMIT ?,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			resultset = pstmt.executeQuery();
+			while(resultset.next()){
+				OrderInfoVO orderInfo = new OrderInfoVO();
+				orderInfo.setOrderPk(resultset.getInt(1));
+				orderInfo.setOrderId(resultset.getInt(2));
+				orderInfo.setOrderDate(resultset.getTimestamp(3));
+				orderInfo.setOrderAmount(resultset.getInt(4));
+				orderInfo.setOrderStatus(resultset.getString(5));
+				orderInfo.setProductId(resultset.getInt(6));
+				orderInfo.setId(resultset.getString(7));
+	
+				OrderInfoList.add(orderInfo);
+			}
+		} catch (SQLException e) {
+			System.out.println("selectList OrderInfo error");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(resultset);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);	
+		}
+		return OrderInfoList;
+	}
+	
 	// DB Select Method
 	public OrderInfoVO select(String userId, int OrderId) {
 		Connection connection = null;
