@@ -43,7 +43,7 @@ public class ProductController extends HttpServlet{
 		ProductPageVO productPage = null;
 		
 		int categoryNum = -1;
-		
+
 		switch(action){
 		case "category":
 			
