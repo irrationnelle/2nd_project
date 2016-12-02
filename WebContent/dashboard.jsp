@@ -59,7 +59,7 @@
                       <th>주문 번호 #</th>
                       <th>주문 일자</th>
                       <th>받는 사람</th>
-                      <th><span class="nobr">총 금액</span></th>
+                      <th><span class="nobr">총 갯수</span></th>
                       <th>현재 상태</th>
                       <th>&nbsp;</th>
                     </tr>
@@ -72,57 +72,13 @@
 	                    	<td> ${items.id} </td>
 	                    	<td> ${items.orderAmount} </td>
 	                    	<td> ${items.orderStatus} </td>
-	                    	<td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
+<!-- 	                    	<td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td> -->
 	                    </tr>
                     </c:forEach>
                   </tbody>
                 </table>
               </div>
             </div>
-<!--             <div class="box-account"> -->
-<!--               <div class="page-title"> -->
-<!--                 <h2>Account Information</h2> -->
-<!--               </div> -->
-<!--               <div class="col2-set"> -->
-<!--                 <div class="col-1"> -->
-<!--                   <h5>Contact Information</h5> -->
-<!--                   <a href="#">Edit</a> -->
-<!--                   <p> Thomas J<br> -->
-<!--                     johndoe5@gmail.com<br> -->
-<!--                     <a href="#">Change Password</a> </p> -->
-<!--                 </div> -->
-<!--                 <div class="col-2"> -->
-<!--                   <h5>Newsletters</h5> -->
-<!--                   <a href="#">Edit</a> -->
-<!--                   <p> You are currently not subscribed to any newsletter. </p> -->
-<!--                 </div> -->
-<!--               </div> -->
-<!--               <div class="col2-set"> -->
-<!--                 <h4>Address Book</h4> -->
-<!--                 <div class="manage_add"><a href="#">Manage Addresses</a> </div> -->
-<!--                 <div class="col-1"> -->
-<!--                   <h5>Primary Billing Address</h5> -->
-<!--                   <address> -->
-<!--                   John D.<br> -->
-<!--                   512 North catalina Avenue, No.3002<br> -->
-<!--                    Redondo Beach, Callfornia<br> -->
-<!--                   United States<br> -->
-<!--                   T: 454541 <br> -->
-<!--                   <a href="#">Edit Address</a> -->
-<!--                   </address> -->
-<!--                 </div> -->
-<!--                 <div class="col-2"> -->
-<!--                   <h5>Primary Shipping Address</h5> -->
-<!--                   <address> -->
-<!--                   John D.<br> -->
-<!--                   512 North catalina Avenue, No.3002<br> -->
-<!--                    Redondo Beach, Callfornia<br> -->
-<!--                   United States<br> -->
-<!--                   T: 454541 <br> -->
-<!--                   <a href="#">Edit Address</a> -->
-<!--                   </address> -->
-<!--                 </div> -->
-<!--               </div> -->
             </div>
           </div>
         </div>

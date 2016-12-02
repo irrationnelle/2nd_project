@@ -10,45 +10,14 @@
                         <ul id="magicat">
                            
                             <li class="level1- level1"> <span class="magicat-cat"><a href="product.do?action=category"><span>SHOP</span></a></span> </li>
-                            <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span>MEN</span></a></span> 
+                            <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="product.do?action=category"><span>Ticket</span></a></span> 
 							<ul>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> SHIRT</span></a></span> </li>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> PANTS</span></a></span> </li>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> JEANS</span></a></span> </li>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> SOCKS</span></a></span> </li>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> HATS</span></a></span> </li>
-								<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> ACCESSORIES</span></a></span> </li>
+								<li class="first level2- level2"> <span class="magicat-cat"><a href="product.do?action=category"><span> ALL</span></a></span> </li>
+								<li class="first level2- level2"> <span class="magicat-cat"><a href="product.do?action=categorySort&categoryNum=1"><span> CELEBRITY</span></a></span> </li>
+								<li class="first level2- level2"> <span class="magicat-cat"><a href="product.do?action=categorySort&categoryNum=2"><span> ATHLETE</span></a></span> </li>
+								<li class="first level2- level2"> <span class="magicat-cat"><a href="product.do?action=categorySort&categoryNum=3"><span> POLITICIAN</span></a></span> </li>
 							</ul>
 							</li>  
-                           <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span>WOMEN</span></a></span> <ul>
-								<li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span> SHIRT</span></a></span> <ul>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> PANTS</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> HATS</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> ACCESSORIES</span></a></span> </li>
-										</ul>
-								</li>
-								<li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span> ACCESSORIES</span></a></span> <ul>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> SHIRT</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> HATS</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> NEW</span></a></span> </li>
-										</ul>
-								</li>
-								<li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span>JEANS </span></a></span> 
-										<ul>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> LONG</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> SHORT</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> MEDIUM</span></a></span> </li>
-										</ul>
-								</li>
-								<li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="category.jsp"><span>SHIRT </span></a></span> 
-										<ul>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> PANTS</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> HATS</span></a></span> </li>
-											<li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> ACCESSORIES</span></a></span> </li>
-										</ul>
-								</li>
-							</ul>
-							</li>   
 <!--                             <li class="level1- level1 open shipping_return"> <span class="magicat-cat"><a href="#"><span>PAGES</span></a></span> -->
 <!--                                 <ul> -->
 <!--                                     <li class="first level2- level2"> <span class="magicat-cat"><a href="category.jsp"><span> GRID</span></a></span> </li> -->

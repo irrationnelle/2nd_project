@@ -3,7 +3,7 @@
 				<div class="top_bar ff-section">                   
                     <div class="middle-nav">
                         <!-- Left Menu Holder -->
-                        <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6">
+                        <div class="col-lg-4 col-md-3 col-sm-5 col-xs-6">
                             <div class="menu-holder">
                                 <div class="vcenter-wrapper">
                                     <div class="vcenter">
@@ -31,28 +31,21 @@
                             </div>
                         </div>
 <!--                         <div class="col-lg-6 col-md-7 col-sm-7 col-xs-6" style="background: green;"> -->
-                        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-6">
+                        <div class="col-lg-4 col-md-7 col-sm-7 col-xs-6">
                             <div class="cat_menu">
                                 <ul>                        
                                     <li><a class="nav_link" href="product.do?action=category">Shop</a></li>
+                                    
                                     <li><a class="nav_link" href="product.do?action=category">Ticket</a>
-<!--                                         <div class="cat_submenuwrap"> -->
-<!--                                             <div class="cat_submenu m_semi_full"> -->
-<!--                                                 <div class="row"> -->
-<!--                                                     <div class="col-lg-4 col-md-5 col-sm-12"> -->
-<!--                                                         <ul> -->
-<!--                                                             <li><a href="category.jsp">Shirt</a></li> -->
-<!--                                                             <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li> -->
-<!--                                                             <li><a href="category.jsp">Jeans</a></li> -->
-<!--                                                             <li><a href="category.jsp">Socks<span class="label_hot">Hot</span></a></li> -->
-<!--                                                             <li><a href="category.jsp">Hats</a></li> -->
-<!--                                                             <li><a href="category.jsp">Accessories</a></li> -->
-<!--                                                         </ul> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </li> -->
+                                        <div class="cat_submenuwrap">
+                                            <ul class="cat_submenu">
+                                            	<li><a href="product.do?action=category">All</a></li>
+                                               	<li><a href="product.do?action=categorySort&categoryNum=1">Celebrity</a></li>
+                                                <li><a href="product.do?action=categorySort&categoryNum=2">Athlete</a></li>
+                                                <li><a href="product.do?action=categorySort&categoryNum=3">Politician</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
 <!--                                     <li><a class="nav_link" href="category.jsp">Women</a> -->
 <!--                                         <div class="cat_submenuwrap"> -->
 <!--                                             <div class="cat_submenu mr_full_width"> -->
@@ -158,7 +151,7 @@
                                 </ul>	
                             </div>
                         </div>
-                         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-6">
+                         <div class="col-lg-4 col-md-2 col-sm-2 col-xs-6">
                             <div class="log_in">
                                  <a id="cart-black">
                                     <span class="log_link nav_link">My Cart</span>

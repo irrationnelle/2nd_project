@@ -9,7 +9,6 @@
     
 </head>
 
-
 <!-- Body Start -->
 <body class="cms_index page_container side-menu-closed">
 	<div class="row">

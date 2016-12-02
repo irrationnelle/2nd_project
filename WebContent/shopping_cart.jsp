@@ -30,7 +30,7 @@
                         
                         <div class="page_bottom">
                             <a class="shop_more" href="product.do?action=category"><i class="fa fa-chevron-left"></i> 이어서 쇼핑하기 </a>
-                            <span>장바구니에 총  ${requestScope.cartPage.sortCount} 개의 물품이 있으며 , 총액은 ${requestScope.cartPage.totalPrice}원입니다.</span>
+                            <span>장바구니에 총  ${requestScope.cartPage.sortCount} 개의 티켓이 있으며 , 총액은 ${requestScope.cartPage.totalPrice}원입니다.</span>
                             <button type="button" title="Proceed to Checkout" class="button btn-buy-now" onclick="location.href='cart.do?action=passCart'"><span>결제하러 가기</span></button>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                                         <thead>
                                             <tr class="first last">
                                                 <th></th>
-                                                <th>Product Name</th>
-                                                <th>Product Detail</th>
-                                                <th>Quantity</th>
-                                                <th>Price</th>
-                                                <th colspan="2" class="text-center">Edit / Remove</th>
+                                                <th>티켓 이름</th>
+                                                <th>상세 설명</th>
+                                                <th>수량</th>
+                                                <th>가격</th>
+                                                <th colspan="2" class="text-center">수정 / 삭제</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,9 +66,8 @@
 	                                                        <span class="cart-price">
 	                                                            <span class="price"></span>
 	                                                            <span class="cart-text">COD:
-	                                                                <span class="available">Available</span><br>
-	                                                                Will Ship By:
-	                                                                <span class="ship-date">Tue,Sep 01st</span>
+	                                                                <span class="available">이용 가능</span><br>
+	                                                                <span class="ship-date">2016년 12월 25일</span>
 	                                                            </span>
 	                                                        </span>
 	                                                    </div>
