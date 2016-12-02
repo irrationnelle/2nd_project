@@ -11,12 +11,14 @@ public class ProductVO {
 	private String productImagedetail02;
 	private String productImagedetail03;
 	private String productDetailEX;
+	private int productCategory;
 	
 	public ProductVO() {	}
 
 	public ProductVO(int productId, String productName, int productStock, int productPrice, String productDetail,
 			String productImage, String productImagedetail01, String productImagedetail02, String productImagedetail03,
-			String productDetailEX) {
+			String productDetailEX, int productCategory) {
+		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productStock = productStock;
@@ -27,6 +29,7 @@ public class ProductVO {
 		this.productImagedetail02 = productImagedetail02;
 		this.productImagedetail03 = productImagedetail03;
 		this.productDetailEX = productDetailEX;
+		this.productCategory = productCategory;
 	}
 
 	public int getProductId() {
@@ -109,12 +112,20 @@ public class ProductVO {
 		this.productDetailEX = productDetailEX;
 	}
 
+	public int getProductCategory() {
+		return productCategory;
+	}
+
+	public void setProductCategory(int productCategory) {
+		this.productCategory = productCategory;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductVO [productId=" + productId + ", productName=" + productName + ", productStock=" + productStock
 				+ ", productPrice=" + productPrice + ", productDetail=" + productDetail + ", productImage="
 				+ productImage + ", productImagedetail01=" + productImagedetail01 + ", productImagedetail02="
 				+ productImagedetail02 + ", productImagedetail03=" + productImagedetail03 + ", productDetailEX="
-				+ productDetailEX + "]";
+				+ productDetailEX + ", productCategory=" + productCategory + "]";
 	}
 }

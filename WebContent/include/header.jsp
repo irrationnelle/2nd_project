@@ -13,6 +13,7 @@
                                                     <span class="menu-button__line-1"></span>
                                                     <span class="menu-button__line-2"></span>
                                                     <span class="menu-button__line-3"></span>
+                            
                                                 </span>
                                             </span>
                                         </a>
@@ -34,82 +35,82 @@
                             <div class="cat_menu">
                                 <ul>                        
                                     <li><a class="nav_link" href="product.do?action=category">Shop</a></li>
-                                    <li><a class="nav_link" href="category.jsp">Men</a>
-                                        <div class="cat_submenuwrap">
-                                            <div class="cat_submenu m_semi_full">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-5 col-sm-12">
-                                                        <ul>
-                                                            <li><a href="category.jsp">Shirt</a></li>
-                                                            <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li>
-                                                            <li><a href="category.jsp">Jeans</a></li>
-                                                            <li><a href="category.jsp">Socks<span class="label_hot">Hot</span></a></li>
-                                                            <li><a href="category.jsp">Hats</a></li>
-                                                            <li><a href="category.jsp">Accessories</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a class="nav_link" href="category.jsp">Women</a>
-                                        <div class="cat_submenuwrap">
-                                            <div class="cat_submenu mr_full_width">
-                                                <div class="col-lg-9 col-md-9 m_auto">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3">
-                                                            <ul>
-                                                                <li><a href="category.jsp" class="inner_menu">Shirt</a>
-                                                                    <ul class="int_menu">
-                                                                        <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li>
-                                                                        <li><a href="category.jsp">Hats</a></li>
-                                                                        <li><a href="category.jsp">Accessories</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                            <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom1.png" />
-                                                        </div>                                        
-                                                        <div class="col-lg-3 col-md-3 col-sm-3">
-                                                            <ul>
-                                                                <li><a href="category.jsp" class="inner_menu">Accessories</a>
-                                                                    <ul class="int_menu">
-                                                                        <li><a href="category.jsp">Hats</a></li>
-                                                                        <li><a href="category.jsp">Shirt<span class="label_hot">Hot</span></a></li>
-                                                                        <li><a href="category.jsp">New</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                            <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom2.png" />
-                                                        </div>                                                
-                                                        <div class="col-lg-3 col-md-3 col-sm-3">
-                                                            <ul>
-                                                                <li><a href="category.jsp" class="inner_menu">Jeans</a>
-                                                                    <ul class="int_menu">
-                                                                        <li><a href="category.jsp">Long</a></li>
-                                                                        <li><a href="category.jsp">Short</a></li>
-                                                                        <li><a href="category.jsp">Medium</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                            <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom3.png" />
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-sm-3">
-                                                            <ul>
-                                                                <li><a href="category.jsp" class="inner_menu">Shirt</a>
-                                                                    <ul class="int_menu">
-                                                                        <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li>
-                                                                        <li><a href="category.jsp">Hats</a></li>
-                                                                        <li><a href="category.jsp">Accessories</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                            <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom4.png" />
-                                                        </div>                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <li><a class="nav_link" href="product.do?action=category">Ticket</a>
+<!--                                         <div class="cat_submenuwrap"> -->
+<!--                                             <div class="cat_submenu m_semi_full"> -->
+<!--                                                 <div class="row"> -->
+<!--                                                     <div class="col-lg-4 col-md-5 col-sm-12"> -->
+<!--                                                         <ul> -->
+<!--                                                             <li><a href="category.jsp">Shirt</a></li> -->
+<!--                                                             <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li> -->
+<!--                                                             <li><a href="category.jsp">Jeans</a></li> -->
+<!--                                                             <li><a href="category.jsp">Socks<span class="label_hot">Hot</span></a></li> -->
+<!--                                                             <li><a href="category.jsp">Hats</a></li> -->
+<!--                                                             <li><a href="category.jsp">Accessories</a></li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </li> -->
+<!--                                     <li><a class="nav_link" href="category.jsp">Women</a> -->
+<!--                                         <div class="cat_submenuwrap"> -->
+<!--                                             <div class="cat_submenu mr_full_width"> -->
+<!--                                                 <div class="col-lg-9 col-md-9 m_auto"> -->
+<!--                                                     <div class="row"> -->
+<!--                                                         <div class="col-lg-3 col-md-3 col-sm-3"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><a href="category.jsp" class="inner_menu">Shirt</a> -->
+<!--                                                                     <ul class="int_menu"> -->
+<!--                                                                         <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li> -->
+<!--                                                                         <li><a href="category.jsp">Hats</a></li> -->
+<!--                                                                         <li><a href="category.jsp">Accessories</a></li> -->
+<!--                                                                     </ul> -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom1.png" /> -->
+<!--                                                         </div>                                         -->
+<!--                                                         <div class="col-lg-3 col-md-3 col-sm-3"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><a href="category.jsp" class="inner_menu">Accessories</a> -->
+<!--                                                                     <ul class="int_menu"> -->
+<!--                                                                         <li><a href="category.jsp">Hats</a></li> -->
+<!--                                                                         <li><a href="category.jsp">Shirt<span class="label_hot">Hot</span></a></li> -->
+<!--                                                                         <li><a href="category.jsp">New</a></li> -->
+<!--                                                                     </ul> -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom2.png" /> -->
+<!--                                                         </div>                                                 -->
+<!--                                                         <div class="col-lg-3 col-md-3 col-sm-3"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><a href="category.jsp" class="inner_menu">Jeans</a> -->
+<!--                                                                     <ul class="int_menu"> -->
+<!--                                                                         <li><a href="category.jsp">Long</a></li> -->
+<!--                                                                         <li><a href="category.jsp">Short</a></li> -->
+<!--                                                                         <li><a href="category.jsp">Medium</a></li> -->
+<!--                                                                     </ul> -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom3.png" /> -->
+<!--                                                         </div> -->
+<!--                                                         <div class="col-lg-3 col-md-3 col-sm-3"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><a href="category.jsp" class="inner_menu">Shirt</a> -->
+<!--                                                                     <ul class="int_menu"> -->
+<!--                                                                         <li><a href="category.jsp">Pants<span class="label_new">NEW</span></a></li> -->
+<!--                                                                         <li><a href="category.jsp">Hats</a></li> -->
+<!--                                                                         <li><a href="category.jsp">Accessories</a></li> -->
+<!--                                                                     </ul> -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <img class="img-responsive menu_bottom_img" alt="" src="images/menu_full_bg_bottom4.png" /> -->
+<!--                                                         </div>                                         -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </li> -->
                                                                 
 <!--                                     <li><a class="nav_link" href="">Page</a> -->
 <!--                                         <div class="cat_submenuwrap"> -->

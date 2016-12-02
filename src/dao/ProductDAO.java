@@ -42,7 +42,8 @@ public class ProductDAO {
 					+ "PRODUCT_IMAGEDETAIL01,"
 					+ "PRODUCT_IMAGEDETAIL02,"
 					+ "PRODUCT_IMAGEDETAIL03,"
-					+ "PRODUCT_detail_ex"
+					+ "PRODUCT_detail_ex,"
+					+ "PRODUCT_category"
 					+ " FROM product WHERE PRODUCT_ID=?";
 			pstatement = connection.prepareStatement(sql);
 
@@ -60,6 +61,7 @@ public class ProductDAO {
 				result.setProductImagedetail02(resultset.getString(8));
 				result.setProductImagedetail03(resultset.getString(9));
 				result.setProductDetailEX(resultset.getString(10));
+				result.setProductCategory(resultset.getInt(11));
 			}
 		} catch (SQLException e) {
 			System.out.println("select product 에러");
@@ -81,7 +83,7 @@ public class ProductDAO {
 		try {
 			con = DBUtil.makeConnection();
 			String sql=
-			"SELECT * FROM product ORDER BY PRODUCT_ID DESC LIMIT ?,?";
+			"SELECT * FROM product ORDER BY PRODUCT_ID ASC LIMIT ?,?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
@@ -98,7 +100,50 @@ public class ProductDAO {
 				product.setProductImagedetail02(rs.getString(8));
 				product.setProductImagedetail03(rs.getString(9));
 				product.setProductDetailEX(rs.getString(10));
+				product.setProductCategory(rs.getInt(11));
+				
+				productList.add(product);
+			}
+		} catch (SQLException e) {
+			System.out.println("selectList 에러");
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);	
+		}
+		return productList;	
+	}
 	
+	public List<ProductVO> selectListSort(int startRow, int endRow, int categoryNum){
+		Connection con = null;
+		PreparedStatement pstmt= null;
+		ResultSet rs = null;
+		List<ProductVO> productList = new ArrayList<>();
+		
+		try {
+			con = DBUtil.makeConnection();
+			String sql=
+			"SELECT * FROM product WHERE product_category=? ORDER BY PRODUCT_ID ASC LIMIT ?,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, categoryNum);
+			pstmt.setInt(2, startRow);
+			pstmt.setInt(3, endRow);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				ProductVO product = new ProductVO();
+				product.setProductId(rs.getInt(1));
+				product.setProductName(rs.getString(2));
+				product.setProductStock(rs.getInt(3));
+				product.setProductPrice(rs.getInt(4));
+				product.setProductDetail(rs.getString(5));
+				product.setProductImage(rs.getString(6));
+				product.setProductImagedetail01(rs.getString(7));
+				product.setProductImagedetail02(rs.getString(8));
+				product.setProductImagedetail03(rs.getString(9));
+				product.setProductDetailEX(rs.getString(10));
+				product.setProductCategory(rs.getInt(11));
+				
 				productList.add(product);
 			}
 		} catch (SQLException e) {

@@ -38,17 +38,33 @@ public class ProductController extends HttpServlet{
 		String viewPath = "";
 		
 		ProductService service = ProductService.getInstance();
+		int currentPage = 1;
+		String currentPageStr = request.getParameter("page");
+		ProductPageVO productPage = null;
 		
 		switch(action){
 		case "category":
-			int currentPage = 1;
-			String currentPageStr = request.getParameter("page");
 			
 			if(currentPageStr != null && currentPageStr.length()>=0) {
 				currentPage = Integer.parseInt(currentPageStr);
 			}
 			
-			ProductPageVO productPage = service.makePage(currentPage);
+			productPage = service.makePage(currentPage);
+			request.setAttribute("productPage", productPage);
+			System.out.println(productPage);
+			viewPath = "category.jsp";
+			break;
+			
+		case "categorySort":
+			if(currentPageStr != null && currentPageStr.length()>=0) {
+				currentPage = Integer.parseInt(currentPageStr);
+			}
+			int categoryNum = -1;
+			String categoryNumStr = request.getParameter("categoryNum");
+			if(categoryNumStr != null && categoryNumStr.length()>=0) {
+				categoryNum = Integer.parseInt(categoryNumStr);
+			}
+			productPage = service.makePageSort(currentPage, categoryNum);
 			request.setAttribute("productPage", productPage);
 			System.out.println(productPage);
 			viewPath = "category.jsp";

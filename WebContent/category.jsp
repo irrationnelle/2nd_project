@@ -25,10 +25,10 @@
         	<!-- Inner Menu Start -->
         	<div class="cat_menu inner_menu">
                 <ul>                        
-                    <li><a class="nav_link nav_link_active" href="">All</a></li>
-                    <li><a class="nav_link" href="category.jsp">Tops</a></li>
-                    <li><a class="nav_link" href="">Shirts</a></li>
-                    <li><a class="nav_link" href="category.jsp">Leggings</a></li>
+                    <li><a class="nav_link nav_link_active" href="product.do?action=category">All</a></li>
+                    <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=1">Celebrity</a></li>
+                    <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=2">Athlete</a></li>
+                    <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=3">Politician</a></li>
                     <li><a class="nav_link" href="">Dresses</a></li>
                 </ul>	
             </div>
