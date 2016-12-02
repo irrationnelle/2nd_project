@@ -29,7 +29,6 @@
                     <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=1">Celebrity</a></li>
                     <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=2">Athlete</a></li>
                     <li><a class="nav_link" href="product.do?action=categorySort&categoryNum=3">Politician</a></li>
-                    <li><a class="nav_link" href="">Dresses</a></li>
                 </ul>	
             </div>
             <!-- Inner Menu End -->
@@ -80,7 +79,14 @@
                             <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
 <!--                             <li class="active"><a href="">1</a></li> -->
 	                            <c:forEach var="i" begin="${requestScope.productPage.startPage}" end="${requestScope.productPage.endPage}">
-	                            	<li><a href="product.do?action=category&page=${i}">${i}</a></li>
+	                            	<c:choose>
+		                            	<c:when test="${requestScope.productPage.productCategory == -1}">
+		                            		<li><a href="product.do?action=category&page=${i}">${i}</a></li>
+		                            	</c:when>
+		                            	<c:otherwise>
+		                            		<li><a href="product.do?action=categorySort&page=${i}&categoryNum=${requestScope.productPage.productCategory}">${i}</a></li>
+		                            	</c:otherwise>
+	                            	</c:choose>
 	                            </c:forEach>
                             <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                         </ul>

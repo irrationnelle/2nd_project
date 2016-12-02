@@ -213,4 +213,30 @@ public class ProductDAO {
 		}
 		return count;
 	}
+	
+	public int selectCountSort(int categoryNum){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		
+		try {
+			con = DBUtil.makeConnection();
+			String sql = "SELECT COUNT(*) FROM product WHERE product_category=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, categoryNum);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs);
+			DBUtil.close(pstmt);
+			DBUtil.close(con);
+		}
+		return count;
+	}
 }

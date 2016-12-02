@@ -11,7 +11,7 @@ public class ProductVO {
 	private String productImagedetail02;
 	private String productImagedetail03;
 	private String productDetailEX;
-	private int productCategory;
+	private int productCategory = -1;
 	
 	public ProductVO() {	}
 

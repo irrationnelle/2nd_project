@@ -42,6 +42,8 @@ public class ProductController extends HttpServlet{
 		String currentPageStr = request.getParameter("page");
 		ProductPageVO productPage = null;
 		
+		int categoryNum = -1;
+		
 		switch(action){
 		case "category":
 			
@@ -59,7 +61,6 @@ public class ProductController extends HttpServlet{
 			if(currentPageStr != null && currentPageStr.length()>=0) {
 				currentPage = Integer.parseInt(currentPageStr);
 			}
-			int categoryNum = -1;
 			String categoryNumStr = request.getParameter("categoryNum");
 			if(categoryNumStr != null && categoryNumStr.length()>=0) {
 				categoryNum = Integer.parseInt(categoryNumStr);

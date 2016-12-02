@@ -56,7 +56,7 @@ public class ProductService {
 		if (endPage > totalPage)
 			endPage = totalPage;
 
-		return new ProductPageVO(productList, currentPage, startPage, endPage, totalPage);
+		return new ProductPageVO(productList, currentPage, startPage, endPage, totalPage, -1);
 	}
 	
 	public ProductPageVO makePageSort(int currentPage, int categoryNum) {
@@ -69,7 +69,7 @@ public class ProductService {
 		List<ProductVO> productList = dao.selectListSort(startRow, endRow, categoryNum);
 
 		// ÃÑ °Ô½Ã±Û °¹¼ö Á¶È¸
-		int productTotalCount = dao.selectCount();
+		int productTotalCount = dao.selectCountSort(categoryNum);
 
 		// ÃÑ ÆäÀÌÁö¼ö °è»ê
 		int totalPage = productTotalCount / PAGE_PER_COUNT;
@@ -84,7 +84,7 @@ public class ProductService {
 		if (endPage > totalPage)
 			endPage = totalPage;
 
-		return new ProductPageVO(productList, currentPage, startPage, endPage, totalPage);
+		return new ProductPageVO(productList, currentPage, startPage, endPage, totalPage, categoryNum);
 	}
 	
 
