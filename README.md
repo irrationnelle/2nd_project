@@ -1,29 +1,18 @@
-# 2nd project <¼îÇÎ¸ô Á¦ÀÛ>
-## HTML, CSS, JavaScript, JSP¸¦ ÀÌ¿ëÇÏ¿© ¼îÇÎ¸ô Á¦ÀÛÇÏ±â
+# 2nd project <ì‡¼í•‘ëª° ì œìž‘>
+## HTML, CSS, JavaScript, JSPë¥¼ ì´ìš©í•˜ì—¬ ì‡¼í•‘ëª° ì œìž‘í•˜ê¸°
 
-### »ç¿ë±â¼ú
-* ¼­¹ö: CentOS (OS) + nginx (Server) + Apache tomcat 7.0 (WAS)
-* ÇÁ·ÐÆ®¿£µå : ºÎÆ®½ºÆ®·¦
-* ¹é¿£µå: JSP + JSTL
+### ì‚¬ìš©ê¸°ìˆ 
+* ì„œë²„: CentOS (OS) + nginx (Server) + Apache tomcat 7.0 (WAS)
+* í”„ë¡ íŠ¸ì—”ë“œ : ë¶€íŠ¸ìŠ¤íŠ¸ëž©
+* ë°±ì—”ë“œ: JSP + JSTL
 * DB: MariaDB 10.1.19
-* DB ÄÄÇ»ÅÍ P/W : rStudy!234
 
-### °³¹ßÈ¯°æ
->* ¼­¹ö IP: 70.12.109.114:8080
+### ê°œë°œí™˜ê²½
+>* ì„œë²„ IP: 70.12.109.114:8080
 >* DB_DRIVER: "org.mariadb.jdbc.Driver"
 >* DB_URL: "jdbc:mariadb://70.12.109.114:3306/project"
->* DB_ID: "root"
->* DB_PASSWORD: "sds902"
 
-
-### ÄÜ¼Ö·Î DB Á¢¼Ó ÇÏ´Â ¹ý
-* 1. windows Å° + R
-* 2. cmd ÀÔ·Â
-* 3. mysql -h 70.12.109.114 -uroot -p
-* 4. ºñ¹Ð¹øÈ£ ÀÔ·ÂÇÏ¶ó°í ¶ß¸é : sds902 ÀÔ·Â!
-
-
-### DB Å×ÀÌºí Á¤º¸
+### DB í…Œì´ë¸” ì •ë³´
 #### table name: member
 * id varchar(50) primary key not null
 * password varchar(50) not null
@@ -58,30 +47,30 @@
 * foreign key(product_id) references product(product_id)
 
 ##16. 11. 23
-### ¿ªÇÒ ºÐ´ã!
-* °­Àº¼±: ÇÁ·ÐÆ®¿£µå + JSP (ÅÛÇÃ¸´ Á¤º¸: https://p.w3layouts.com/demos/swim_wear/web/ )
-* ¼­Ã¢¿ø: ProductDAO, OrderInfoDAO Å¬·¡½º
-* ¼ÛÁö¿ø: ¼­ºí¸´ ÀÛ¾÷(¾Æ¸¶µµ ProductController, OrderInfoController Å¬·¡½º)
-* ¾ÈÇö¼®: ProductService, OrderInfoService Å¬·¡½º
+### ì—­í•  ë¶„ë‹´!
+* ê°•ì€ì„ : í”„ë¡ íŠ¸ì—”ë“œ + JSP (í…œí”Œë¦¿ ì •ë³´: https://p.w3layouts.com/demos/swim_wear/web/ )
+* ì„œì°½ì›: ProductDAO, OrderInfoDAO í´ëž˜ìŠ¤
+* ì†¡ì§€ì›: ì„œë¸”ë¦¿ ìž‘ì—…(ì•„ë§ˆë„ ProductController, OrderInfoController í´ëž˜ìŠ¤)
+* ì•ˆí˜„ì„: ProductService, OrderInfoService í´ëž˜ìŠ¤
 
 ##16. 11. 14
-### ¿ªÇÒ ºÐ´ã!
-* °­Àº¼±: MemberService Å¬·¡½º
-* ¼­Ã¢¿ø: MemberController Å¬·¡½º
-* ¼ÛÁö¿ø: MemberDAO Å¬·¡½º
-* ¾ÈÇö¼®: ÇÁ·ÐÆ®¿£µå + JSP
+### ì—­í•  ë¶„ë‹´!
+* ê°•ì€ì„ : MemberService í´ëž˜ìŠ¤
+* ì„œì°½ì›: MemberController í´ëž˜ìŠ¤
+* ì†¡ì§€ì›: MemberDAO í´ëž˜ìŠ¤
+* ì•ˆí˜„ì„: í”„ë¡ íŠ¸ì—”ë“œ + JSP
 
-### ÄÚµù ±ÔÄ¢ CODING CONVENTION
-* Å¬·¡½º¸íÀº Ã¹±ÛÀÚ ´ë¹®ÀÚ·Î camelCase¸¦ ÁöÄÑÁØ´Ù.
+### ì½”ë”© ê·œì¹™ CODING CONVENTION
+* í´ëž˜ìŠ¤ëª…ì€ ì²«ê¸€ìž ëŒ€ë¬¸ìžë¡œ camelCaseë¥¼ ì§€ì¼œì¤€ë‹¤.
 	* i.e) MemberService
-* ¾àÀÚ´Â ÀüºÎ ´ë¹®ÀÚ
+* ì•½ìžëŠ” ì „ë¶€ ëŒ€ë¬¸ìž
 	* i.e) MemberDAO, MemberVO
-* ¸Þ¼Òµå ÀÛ¸í ±ÔÄ¢
-	* make: »ý¼º°ú °ü·ÃµÈ ¸Þ¼Òµå Á¢µÎ¾î
+* ë©”ì†Œë“œ ìž‘ëª… ê·œì¹™
+	* make: ìƒì„±ê³¼ ê´€ë ¨ëœ ë©”ì†Œë“œ ì ‘ë‘ì–´
 		* i.e) makePage(), makeConnection()
-	* show: È­¸é¿¡ Á¤º¸¸¦ Ç¥½ÃÇÒ ¶§ »ç¿ëÇÏ´Â ¸Þ¼Òµå Á¢µÎ¾î 
-	* change: È­¸é¿¡ Ç¥½ÃµÇ´Â Á¤º¸¸¦ º¯°æÇÒ ¶§ »ç¿ëÇÏ´Â ¸Þ¼Òµå Á¢µÎ¾î
-	* delete: »èÁ¦ °ü·Ã ¸Þ¼Òµå Á¢µÎ¾î
-	* insert: DB¿¡ VO°´Ã¼¸¦ ÅëÇØ Á¤º¸ ÀÔ·ÂÇÒ ¶§ »ç¿ëÇÏ´Â Á¢µÎ¾î 
-	* select: DB¿¡¼­ Á¤º¸¸¦ ÀÐ¾î¿Ã ¶§ »ç¿ëÇÏ´Â Á¢µÎ¾î
+	* show: í™”ë©´ì— ì •ë³´ë¥¼ í‘œì‹œí•  ë•Œ ì‚¬ìš©í•˜ëŠ” ë©”ì†Œë“œ ì ‘ë‘ì–´ 
+	* change: í™”ë©´ì— í‘œì‹œë˜ëŠ” ì •ë³´ë¥¼ ë³€ê²½í•  ë•Œ ì‚¬ìš©í•˜ëŠ” ë©”ì†Œë“œ ì ‘ë‘ì–´
+	* delete: ì‚­ì œ ê´€ë ¨ ë©”ì†Œë“œ ì ‘ë‘ì–´
+	* insert: DBì— VOê°ì²´ë¥¼ í†µí•´ ì •ë³´ ìž…ë ¥í•  ë•Œ ì‚¬ìš©í•˜ëŠ” ì ‘ë‘ì–´ 
+	* select: DBì—ì„œ ì •ë³´ë¥¼ ì½ì–´ì˜¬ ë•Œ ì‚¬ìš©í•˜ëŠ” ì ‘ë‘ì–´
 		* i.e) selectMember(), selectId()
